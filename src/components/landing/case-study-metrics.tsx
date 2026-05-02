@@ -4,6 +4,8 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDownRight, TrendingUp } from "lucide-react";
 import { useId } from "react";
 
+import { BeamHighlight } from "./beam-highlight";
+
 const cubic = [0.25, 0.1, 0.25, 1] as const;
 
 /** Semanas recentes — série plausível para funil B2B regional */
@@ -33,12 +35,16 @@ export function CaseStudyMetrics() {
       <div className="grid gap-4 sm:grid-cols-2">
         {/* Card — volume */}
         <motion.div
-          className="flex flex-col rounded-xl border border-white/[0.07] bg-[#0A0A0A]/90 p-4 ring-1 ring-white/[0.04]"
+          className="h-full"
           initial={reduce ? false : { opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.45, ease: cubic }}
         >
+          <BeamHighlight
+            className="flex h-full flex-col rounded-xl border border-white/[0.07] bg-[#0A0A0A]/90 p-4 ring-1 ring-white/[0.04]"
+            innerClassName="flex min-h-0 flex-1 flex-col"
+          >
           <div className="flex items-start justify-between gap-2">
             <div className="flex items-center gap-2 text-[#A8A8B3]">
               <TrendingUp className="size-4 shrink-0 text-[#2563FF]" aria-hidden />
@@ -87,16 +93,21 @@ export function CaseStudyMetrics() {
               <span className="text-[#A8A8B3]">leads / sem.</span>
             </p>
           </div>
+          </BeamHighlight>
         </motion.div>
 
         {/* Card — economia */}
         <motion.div
-          className="flex flex-col rounded-xl border border-white/[0.07] bg-[#0A0A0A]/90 p-4 ring-1 ring-white/[0.04]"
+          className="h-full"
           initial={reduce ? false : { opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.45, delay: 0.06, ease: cubic }}
         >
+          <BeamHighlight
+            className="flex h-full flex-col rounded-xl border border-white/[0.07] bg-[#0A0A0A]/90 p-4 ring-1 ring-white/[0.04]"
+            innerClassName="flex min-h-0 flex-1 flex-col"
+          >
           <div className="flex items-center gap-2 text-[#A8A8B3]">
             <ArrowDownRight
               className="size-4 shrink-0 text-emerald-400/90"
@@ -146,7 +157,7 @@ export function CaseStudyMetrics() {
             </div>
           </div>
 
-          {/* Sparkline decorativo */}
+          {/* Sparkline decorativo — traço revelado ao entrar na vista */}
           <svg
             className="mt-4 h-10 w-full opacity-90"
             viewBox="0 0 120 32"
@@ -159,13 +170,31 @@ export function CaseStudyMetrics() {
                 <stop offset="1" stopColor="#B8BDC9" stopOpacity="0.85" />
               </linearGradient>
             </defs>
-            <path
-              d="M 0 26 L 18 22 L 36 24 L 54 16 L 72 18 L 90 8 L 108 6 L 120 4"
-              stroke={`url(#spark-${sparkId})`}
-              strokeWidth="1.5"
-              strokeLinecap="round"
-            />
+            {reduce ? (
+              <path
+                d="M 0 26 L 18 22 L 36 24 L 54 16 L 72 18 L 90 8 L 108 6 L 120 4"
+                stroke={`url(#spark-${sparkId})`}
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            ) : (
+              <motion.path
+                d="M 0 26 L 18 22 L 36 24 L 54 16 L 72 18 L 90 8 L 108 6 L 120 4"
+                stroke={`url(#spark-${sparkId})`}
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                fill="none"
+                initial={{ pathLength: 0, opacity: 0.35 }}
+                whileInView={{ pathLength: 1, opacity: 1 }}
+                viewport={{ once: true, margin: "0px 0px -20% 0px" }}
+                transition={{
+                  pathLength: { duration: 1.15, ease: cubic, delay: 0.08 },
+                  opacity: { duration: 0.35, delay: 0.08 },
+                }}
+              />
+            )}
           </svg>
+          </BeamHighlight>
         </motion.div>
       </div>
 

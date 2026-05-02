@@ -5,6 +5,7 @@ import { ctaDiagnosis } from "@/lib/cta-styles";
 import { AuroraText } from "@/registry/magicui/aurora-text";
 import { getWhatsAppLeadUrl } from "@/lib/whatsapp";
 
+import { BeamHighlight } from "./beam-highlight";
 import { DiagnosisForm } from "./diagnosis-form";
 import { Reveal } from "./reveal";
 
@@ -61,7 +62,9 @@ export function FinalCta() {
           id="diagnosis"
           className="relative z-[1] mt-16 max-w-3xl scroll-mt-28 md:mt-20"
         >
-          <DiagnosisForm />
+          <BeamHighlight className="rounded-2xl">
+            <DiagnosisForm />
+          </BeamHighlight>
         </div>
       </div>
     </section>

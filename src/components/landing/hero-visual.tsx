@@ -3,6 +3,8 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useId } from "react";
 
+import { AccentBorderBeams } from "./beam-highlight";
+
 import { AnimatedCounter } from "./animated-counter";
 
 const cubic = [0.25, 0.1, 0.25, 1] as const;
@@ -55,6 +57,8 @@ export function HeroVisual() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, ease: cubic }}
       >
+        {/* Magic UI–style border beam — destaca o painel sem competir com o gráfico */}
+        <AccentBorderBeams />
         {/* Brilho superior */}
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#2563FF]/45 to-transparent" />
 
@@ -85,20 +89,45 @@ export function HeroVisual() {
           </div>
         )}
 
-        {/* Grade */}
-        <div
-          className="pointer-events-none absolute inset-0 rounded-2xl opacity-[0.45]"
-          style={{
-            backgroundImage: `
+        {/* Grade — movimento subtil para sensação “vivo” */}
+        {!reduce ? (
+          <motion.div
+            className="pointer-events-none absolute inset-0 rounded-2xl opacity-[0.42]"
+            style={{
+              backgroundImage: `
               linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
               linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px)
             `,
-            backgroundSize: "24px 24px",
-            maskImage:
-              "linear-gradient(to bottom, black 40%, transparent 100%)",
-          }}
-          aria-hidden
-        />
+              backgroundSize: "24px 24px",
+              maskImage:
+                "linear-gradient(to bottom, black 45%, transparent 100%)",
+            }}
+            aria-hidden
+            animate={{
+              backgroundPosition: ["0px 0px", "24px 24px", "0px 0px"],
+              opacity: [0.38, 0.48, 0.38],
+            }}
+            transition={{
+              duration: 14,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          />
+        ) : (
+          <div
+            className="pointer-events-none absolute inset-0 rounded-2xl opacity-[0.45]"
+            style={{
+              backgroundImage: `
+              linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
+              linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px)
+            `,
+              backgroundSize: "24px 24px",
+              maskImage:
+                "linear-gradient(to bottom, black 40%, transparent 100%)",
+            }}
+            aria-hidden
+          />
+        )}
 
         <div className="relative z-[1] p-4 sm:p-6">
           {/* Header do painel */}
@@ -204,15 +233,30 @@ export function HeroVisual() {
                   />
                 )}
                 {!reduce && (
-                  <motion.circle
-                    cx="304"
-                    cy="14"
-                    r="5"
-                    fill={`url(#${gradGlow})`}
+                  <motion.g
+                    style={{ transformOrigin: "304px 14px", transformBox: "fill-box" }}
                     initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ delay: 1.05, duration: 0.35, ease: cubic }}
-                  />
+                    animate={{
+                      scale: 1,
+                      opacity: [0.82, 1, 0.82],
+                    }}
+                    transition={{
+                      scale: { delay: 1.05, duration: 0.4, ease: cubic },
+                      opacity: {
+                        delay: 1.55,
+                        duration: 2.4,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      },
+                    }}
+                  >
+                    <circle
+                      cx="304"
+                      cy="14"
+                      r="5"
+                      fill={`url(#${gradGlow})`}
+                    />
+                  </motion.g>
                 )}
               </svg>
               {/* Spark row */}
@@ -220,14 +264,35 @@ export function HeroVisual() {
                 {[40, 52, 48, 64, 58, 72, 68, 88, 82, 94].map((h, i) => (
                   <motion.div
                     key={i}
-                    className="flex-1 rounded-sm bg-gradient-to-t from-[#2563FF]/25 to-[#2563FF]/85"
+                    className="flex-1 origin-bottom rounded-sm bg-gradient-to-t from-[#2563FF]/25 to-[#2563FF]/85 shadow-[0_0_12px_-4px_rgb(37_99_255_/0.45)]"
                     initial={reduce ? false : { height: 0, opacity: 0 }}
-                    animate={{ height: `${h}%`, opacity: 1 }}
+                    animate={
+                      reduce
+                        ? { height: `${h}%`, opacity: 1 }
+                        : {
+                            height: `${h}%`,
+                            opacity: 1,
+                            scaleY: [1, 1.06, 1],
+                          }
+                    }
                     style={{ maxHeight: "100%" }}
                     transition={{
-                      duration: 0.45,
-                      delay: reduce ? 0 : 0.35 + i * 0.035,
-                      ease: cubic,
+                      height: {
+                        duration: 0.55,
+                        delay: 0.35 + i * 0.035,
+                        ease: cubic,
+                      },
+                      opacity: {
+                        duration: 0.45,
+                        delay: 0.35 + i * 0.035,
+                        ease: cubic,
+                      },
+                      scaleY: {
+                        duration: 2.4 + i * 0.08,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 1.2 + i * 0.07,
+                      },
                     }}
                   />
                 ))}

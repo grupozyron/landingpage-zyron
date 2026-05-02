@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
 import {
   forwardRef,
   type ReactNode,
@@ -34,19 +35,29 @@ const Circle = forwardRef<
 ));
 Circle.displayName = "Circle";
 
+const MotionCircle = motion(Circle);
+
 type ConnectedFlowVisualProps = {
   className?: string;
   variant?: "default" | "featured";
+};
+
+const springIn = {
+  type: "spring" as const,
+  stiffness: 420,
+  damping: 24,
+  mass: 0.85,
 };
 
 export function ConnectedFlowVisual({
   className,
   variant = "default",
 }: ConnectedFlowVisualProps) {
+  const reduce = useReducedMotion();
   const featured = variant === "featured";
 
   const beamCommon = {
-    duration: 4 as const,
+    duration: featured ? 3.25 : 4,
     gradientStartColor: "#2563FF",
     gradientStopColor: "#2563FF",
     pathColor: featured
@@ -101,31 +112,80 @@ export function ConnectedFlowVisual({
         )}
       >
         <div className="flex w-full flex-row items-center justify-between gap-3 px-0.5 md:gap-6">
-          <Circle ref={div1Ref} className={satClass}>
+          <MotionCircle
+            ref={div1Ref}
+            className={satClass}
+            initial={reduce ? false : { opacity: 0, scale: 0.82 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-12% 0px -12% 0px" }}
+            transition={{ ...springIn, delay: reduce ? 0 : 0.12 }}
+          >
             <Megaphone className={iconClass} aria-hidden />
-          </Circle>
-          <Circle ref={div5Ref} className={satClass}>
+          </MotionCircle>
+          <MotionCircle
+            ref={div5Ref}
+            className={satClass}
+            initial={reduce ? false : { opacity: 0, scale: 0.82 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-12% 0px -12% 0px" }}
+            transition={{ ...springIn, delay: reduce ? 0 : 0.16 }}
+          >
             <ClipboardList className={iconClass} aria-hidden />
-          </Circle>
+          </MotionCircle>
         </div>
         <div className="flex w-full flex-row items-center justify-between gap-2 px-0 md:gap-4">
-          <Circle ref={div2Ref} className={satClass}>
+          <MotionCircle
+            ref={div2Ref}
+            className={satClass}
+            initial={reduce ? false : { opacity: 0, scale: 0.82 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-12% 0px -12% 0px" }}
+            transition={{ ...springIn, delay: reduce ? 0 : 0.2 }}
+          >
             <Palette className={iconClass} aria-hidden />
-          </Circle>
-          <Circle ref={div4Ref} className={cn(hubClass)}>
+          </MotionCircle>
+          <MotionCircle
+            ref={div4Ref}
+            className={cn(hubClass)}
+            initial={reduce ? false : { opacity: 0, scale: 0.88 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-12% 0px -12% 0px" }}
+            transition={{ ...springIn, delay: reduce ? 0 : 0.05 }}
+          >
             <LayoutTemplate className={hubIconClass} aria-hidden />
-          </Circle>
-          <Circle ref={div6Ref} className={satClass}>
+          </MotionCircle>
+          <MotionCircle
+            ref={div6Ref}
+            className={satClass}
+            initial={reduce ? false : { opacity: 0, scale: 0.82 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-12% 0px -12% 0px" }}
+            transition={{ ...springIn, delay: reduce ? 0 : 0.2 }}
+          >
             <Users className={iconClass} aria-hidden />
-          </Circle>
+          </MotionCircle>
         </div>
         <div className="flex w-full flex-row items-center justify-between gap-3 px-0.5 md:gap-6">
-          <Circle ref={div3Ref} className={satClass}>
+          <MotionCircle
+            ref={div3Ref}
+            className={satClass}
+            initial={reduce ? false : { opacity: 0, scale: 0.82 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-12% 0px -12% 0px" }}
+            transition={{ ...springIn, delay: reduce ? 0 : 0.24 }}
+          >
             <MessageCircle className={iconClass} aria-hidden />
-          </Circle>
-          <Circle ref={div7Ref} className={satClass}>
+          </MotionCircle>
+          <MotionCircle
+            ref={div7Ref}
+            className={satClass}
+            initial={reduce ? false : { opacity: 0, scale: 0.82 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-12% 0px -12% 0px" }}
+            transition={{ ...springIn, delay: reduce ? 0 : 0.24 }}
+          >
             <BarChart3 className={iconClass} aria-hidden />
-          </Circle>
+          </MotionCircle>
         </div>
       </div>
 
