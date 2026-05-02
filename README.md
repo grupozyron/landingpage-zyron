@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-**Cloudflare Workers (OpenNext):** no painel de deploy, o comando de **build** tem de ser `npm run cf:build` (gera `.open-next/`). `npm run build` é só Next.js e não chega para o Wrangler. Depois: `npx wrangler deploy` (ou `npm run deploy` para build + deploy num só comando local).
+**Cloudflare Workers (OpenNext):** o `wrangler.jsonc` inclui `build.command` → `npm run cf:build`, por isso **`npx wrangler deploy`** corre o OpenNext antes de publicar (gera `.open-next/`). No painel podes manter **Build:** `npm run build` e **Deploy:** `npx wrangler deploy`, ou usar só **`npm run cf:build`** no build e o mesmo deploy. Localmente: **`npm run deploy`** faz build OpenNext + deploy.
 
 Site em produção: [https://grupozyron.com.br](https://grupozyron.com.br) · Instagram [@grupozyron](https://www.instagram.com/grupozyron/).
 
