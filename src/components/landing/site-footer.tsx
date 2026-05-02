@@ -19,8 +19,9 @@ function InstagramIcon({ className }: { className?: string }) {
 }
 
 const footerNav = [
-  { href: "#dor", label: "Tensão" },
+  { href: "#dor", label: "Dores" },
   { href: "#solucao", label: "Solução" },
+  { href: "#automacao", label: "Automação" },
   { href: "#servicos", label: "Serviços" },
   { href: "#case", label: "Casos" },
   { href: "#como-funciona", label: "Como funciona" },
@@ -51,9 +52,9 @@ export function SiteFooter() {
               </p>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Empresa de crescimento premium: tráfego pago, landing pages
-              estratégicas e sistemas de aquisição para negócios tradicionais que
-              precisam modernizar e crescer com previsibilidade.
+              Growth &amp; automação premium — tráfego pago, landing estratégica,
+              IA no WhatsApp e sistemas de aquisição para negócios tradicionais que
+              precisam escalar com método.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <WhatsAppFooterButton />

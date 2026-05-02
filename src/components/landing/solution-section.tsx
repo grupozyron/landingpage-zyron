@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Globe2, LineChart, Target, TrendingUp } from "lucide-react";
+import { Bot, LineChart, Target, TrendingUp } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { fadeUp, stagger } from "@/lib/motion-variants";
@@ -12,22 +12,22 @@ import { Reveal } from "./reveal";
 const pillars = [
   {
     title: "Captação",
-    body: "Mais clientes qualificados.",
+    body: "Anúncios que atraem clientes certos.",
     icon: Target,
   },
   {
     title: "Conversão",
-    body: "Landing pages que vendem.",
+    body: "Landing pages que geram contato.",
     icon: TrendingUp,
   },
   {
-    title: "Presença",
-    body: "Marca forte no digital.",
-    icon: Globe2,
+    title: "Automação",
+    body: "IA que responde e agenda automaticamente.",
+    icon: Bot,
   },
   {
     title: "Escala",
-    body: "Crescimento previsível.",
+    body: "Mais previsibilidade e menos desperdício.",
     icon: LineChart,
   },
 ];
@@ -46,12 +46,12 @@ export function SolutionSection() {
             Solução
           </p>
           <h2 className="font-heading mt-5 max-w-3xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl sm:leading-tight">
-            A ZYRON transforma negócios sólidos em empresas preparadas para{" "}
-            <AuroraText className="font-semibold">crescer.</AuroraText>
+            A nova geração de{" "}
+            <AuroraText className="font-semibold">crescimento empresarial.</AuroraText>
           </h2>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-            Criamos sistemas modernos de aquisição de clientes para gerar
-            autoridade, oportunidades e crescimento real.
+            A ZYRON combina marketing, tecnologia e automação para transformar
+            negócios tradicionais em empresas prontas para escalar.
           </p>
         </Reveal>
 

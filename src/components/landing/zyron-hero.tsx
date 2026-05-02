@@ -1,5 +1,6 @@
 "use client";
 
+import { Check } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 
 import { HashLink } from "@/components/hash-link";
@@ -13,6 +14,13 @@ import { fadeUp, stagger } from "@/lib/motion-variants";
 import { AuroraText } from "@/registry/magicui/aurora-text";
 
 import { HeroVisual } from "./hero-visual";
+
+const heroTrust = [
+  "Atendimento automatizado",
+  "Mais leads convertidos",
+  "Crescimento previsível",
+  "Estrutura premium",
+];
 
 export function ZyronHero() {
   const reduce = useReducedMotion();
@@ -36,43 +44,42 @@ export function ZyronHero() {
               variants={fadeUp}
               className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground sm:text-xs sm:tracking-[0.2em]"
             >
-              Grupo ZYRON · Crescimento premium · Brasil
+              ZYRON · Growth &amp; automação · Brasil
             </motion.p>
 
             <motion.h1
               id="zyron-hero-heading"
               variants={fadeUp}
-              className="text-balance font-heading mt-6 text-[1.6rem] font-semibold leading-[1.14] tracking-tight text-foreground sm:text-4xl sm:leading-[1.06] lg:text-[2.55rem] xl:text-[2.75rem]"
+              className="font-heading mt-6 text-[1.55rem] font-semibold leading-[1.16] tracking-tight text-foreground sm:text-4xl sm:leading-[1.06] lg:text-[2.45rem] xl:text-[2.65rem]"
             >
-              Sua empresa já é boa.{" "}
-              <AuroraText className="font-semibold">
-                Falta crescer como marca grande.
+              <span className="block text-balance sm:inline">
+                Sua empresa já é boa.
+              </span>{" "}
+              <AuroraText className="block font-semibold text-balance sm:inline">
+                O problema é estar perdendo crescimento todos os dias.
               </AuroraText>
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
-              className="mx-auto mt-5 max-w-xl text-[15px] font-medium leading-relaxed text-foreground/95 sm:text-lg lg:mx-0"
-            >
-              Empresas fortes não deveriam depender só de indicação.
-            </motion.p>
-
-            <motion.p
-              variants={fadeUp}
               className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-muted-foreground sm:text-lg lg:mx-0"
             >
-              A ZYRON ajuda empresas tradicionais a construir presença digital,
-              gerar clientes qualificados e crescer com previsibilidade.
+              A ZYRON ajuda empresas a vender mais com tráfego pago, landing pages
+              estratégicas e automações com IA no WhatsApp.
             </motion.p>
-            <motion.p
+
+            <motion.div
               variants={fadeUp}
-              className="mx-auto mt-4 max-w-xl border-l-2 border-[#2563FF]/35 pl-4 text-[14px] leading-relaxed text-muted-foreground sm:text-[15px] lg:mx-0 lg:pl-5"
+              className="mx-auto mt-6 flex max-w-xl flex-col gap-3 border-l-2 border-[#2563FF]/35 pl-4 text-left lg:mx-0 lg:pl-5"
             >
-              <span className="text-foreground/95">
-                Negócios sérios merecem estrutura digital à altura.
-              </span>{" "}
-              Tráfego pago, landing e posicionamento — com método, não improviso.
-            </motion.p>
+              <p className="text-[14px] leading-relaxed text-muted-foreground sm:text-[15px]">
+                <span className="font-medium text-foreground/95">
+                  Seu negócio é forte — mas o crescimento escapa sem estrutura
+                  moderna.
+                </span>{" "}
+                Tráfego, conversão e automação no mesmo sistema — sem improviso.
+              </p>
+            </motion.div>
 
             <motion.div
               variants={fadeUp}
@@ -100,6 +107,24 @@ export function ZyronHero() {
                 Ver como funciona
               </HashLink>
             </motion.div>
+
+            <motion.ul
+              variants={fadeUp}
+              className="mt-8 grid gap-2.5 sm:grid-cols-2 lg:max-w-xl"
+              aria-label="Por que falar com a ZYRON"
+            >
+              {heroTrust.map((line) => (
+                <li
+                  key={line}
+                  className="flex items-start gap-2 text-left text-[13px] leading-snug text-[#B8BDC9] sm:text-sm"
+                >
+                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-md bg-[#2563FF]/18 text-[#7EA8FF]">
+                    <Check className="size-3.5" strokeWidth={2.5} aria-hidden />
+                  </span>
+                  {line}
+                </li>
+              ))}
+            </motion.ul>
           </motion.div>
 
           <motion.div
@@ -116,7 +141,7 @@ export function ZyronHero() {
               <HeroVisual />
             </div>
             <p className="mx-auto mt-8 max-w-md text-center font-mono text-[10px] uppercase leading-snug tracking-[0.14em] text-muted-foreground sm:text-[11px] sm:tracking-[0.16em]">
-              Tráfego pago · landing · conversão · posicionamento · performance
+              Tráfego pago · landing · IA · WhatsApp · dados · performance
             </p>
           </motion.div>
         </div>

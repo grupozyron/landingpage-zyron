@@ -5,7 +5,8 @@ import { cn } from "@/lib/utils";
  */
 export const ctaDiagnosis = cn(
   "h-12 min-h-[48px] rounded-full px-8 text-base font-semibold",
-  "shadow-[0_0_32px_-12px_rgb(37_99_255_/0.5)]",
+  "shadow-[0_0_40px_-10px_rgb(37_99_255_/0.58)]",
+  "ring-1 ring-[#2563FF]/35",
 );
 
 /** Barra superior — compacto · min 44px toque (WCAG / mobile). */

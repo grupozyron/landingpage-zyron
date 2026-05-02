@@ -2,10 +2,10 @@
 
 import {
   BarChart3,
+  Bot,
   Globe2,
   Megaphone,
   RefreshCw,
-  Rocket,
   Sparkles,
 } from "lucide-react";
 
@@ -15,11 +15,11 @@ import { Reveal } from "./reveal";
 
 const services = [
   { title: "Gestão de tráfego pago", icon: Megaphone },
-  { title: "Landing pages premium", icon: Sparkles },
-  { title: "Posicionamento digital", icon: Globe2 },
-  { title: "Captação de leads", icon: BarChart3 },
+  { title: "Landing pages estratégicas", icon: Sparkles },
+  { title: "Automação e IA no WhatsApp", icon: Bot },
+  { title: "Qualificação de leads", icon: BarChart3 },
   { title: "Otimização contínua", icon: RefreshCw },
-  { title: "Estratégia de crescimento", icon: Rocket },
+  { title: "Estratégia de crescimento", icon: Globe2 },
 ];
 
 export function ServicesSection() {
@@ -34,8 +34,12 @@ export function ServicesSection() {
             Entregas
           </p>
           <h2 className="font-heading mt-5 max-w-3xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl sm:leading-tight">
-            O que construímos para sua empresa
+            O que a ZYRON constrói para sua empresa
           </h2>
+          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
+            Um ecossistema integrado — da primeira impressão ao contato
+            qualificado no WhatsApp.
+          </p>
         </Reveal>
 
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

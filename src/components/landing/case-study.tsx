@@ -27,11 +27,9 @@ export function CaseStudy() {
             Case real: <AuroraText className="font-semibold">Elume</AuroraText>
           </h2>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-            A Elume é uma empresa sólida com anos de mercado e excelente
-            reputação. Por muito tempo cresceu apenas por indicação. Agora iniciou
-            uma nova fase com a ZYRON através de landing page estratégica, presença
-            digital profissional, estrutura para captação online e novo
-            posicionamento de mercado.
+            Empresa sólida com anos de mercado — mas presa ao crescimento por
+            indicação. Com a ZYRON, passou a ter landing premium, presença digital
+            profissional e estrutura para atrair novos clientes com critério.
           </p>
         </Reveal>
 
@@ -48,9 +46,9 @@ export function CaseStudy() {
                 </span>
               </div>
               <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                Transição de indicação para um funil digital alinhado ao ticket —
-                página com intenção comercial, marca consistente online e ritmo de
-                otimização.
+                Da dependência de indicação para um funil digital alinhado ao
+                ticket — página com intenção comercial, marca consistente e ritmo de
+                melhoria contínua.
               </p>
               <p className="mt-5">
                 <Link
@@ -93,11 +91,11 @@ export function CaseStudy() {
                 Próximos cases
               </p>
               <h3 className="font-heading mt-3 text-xl font-semibold text-foreground md:text-2xl">
-                Empresas excelentes merecem crescer com estrutura.
+                Empresas boas merecem crescer como grandes marcas.
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-[15px]">
-                Publicamos novos cases com autorização. Se o seu perfil conversa
-                com a ZYRON, você pode ser o próximo.
+                Publicamos novos cases com autorização. Se o seu perfil conversa com
+                a ZYRON, o próximo capítulo pode ser o seu.
               </p>
             </div>
             <div className="mt-6 shrink-0 md:mt-0">

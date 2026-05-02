@@ -13,8 +13,9 @@ import { cn } from "@/lib/utils";
 import { MobileNavOverlay } from "./mobile-nav-overlay";
 
 const nav = [
-  { href: "#dor", label: "Tensão" },
+  { href: "#dor", label: "Dores" },
   { href: "#solucao", label: "Solução" },
+  { href: "#automacao", label: "Automação" },
   { href: "#servicos", label: "Serviços" },
   { href: "#case", label: "Casos" },
   { href: "#como-funciona", label: "Como funciona" },
@@ -26,8 +27,9 @@ const SECTION_IDS = nav.map((n) => n.href.replace("#", "")) as readonly string[]
 const navLinkBase =
   "touch-manipulation whitespace-nowrap rounded-full px-3 py-2.5 text-[13px] font-medium transition-[color,background-color,box-shadow] duration-200 lg:px-4 flex min-h-[44px] shrink-0 items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563FF]/55 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0A]";
 
+/** justify-start: com overflow-x, justify-center cortava o primeiro item (“Dores”). */
 const pillWrapClass =
-  "flex max-w-full flex-nowrap items-center gap-0.5 overflow-x-auto rounded-full border border-white/[0.09] bg-[#101018]/95 p-1 shadow-[inset_0_1px_0_0_rgb(255_255_255_/0.05)] [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden";
+  "flex w-max max-w-full min-w-0 flex-nowrap items-center justify-start gap-0.5 overflow-x-auto rounded-full border border-white/[0.09] bg-[#101018]/95 p-1 ps-1.5 pe-1.5 shadow-[inset_0_1px_0_0_rgb(255_255_255_/0.05)] [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden";
 
 export function ZyronHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -84,26 +86,19 @@ export function ZyronHeader() {
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#2563FF]/40 to-transparent"
       />
       <div className="relative mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-        <div className="hidden h-16 md:grid md:w-full md:grid-cols-[auto_minmax(0,1fr)_auto] md:items-center md:gap-3 lg:gap-4">
-          <div className="min-w-0 justify-self-start">
+        <div className="hidden h-16 md:grid md:w-full md:grid-cols-[auto_minmax(0,1fr)_auto] md:items-center md:gap-4 lg:gap-6">
+          <div className="min-w-0 shrink-0 justify-self-start pr-1">
             <SiteLogo variant="header" />
           </div>
 
           <nav
-            className="flex min-w-0 justify-center justify-self-stretch px-1 lg:px-2"
+            className="flex min-w-0 justify-center justify-self-stretch overflow-visible px-0 sm:px-1"
             aria-label="Navegação principal"
           >
-            <div
-              className={cn(
-                pillWrapClass,
-                "max-w-full min-w-0 md:inline-flex md:justify-center",
-              )}
-            >
-              {links}
-            </div>
+            <div className={cn(pillWrapClass)}>{links}</div>
           </nav>
 
-          <div className="flex shrink-0 items-center justify-self-end">
+          <div className="flex shrink-0 items-center justify-self-end pl-2">
             <InteractiveHoverButton
               href="#diagnosis"
               className={cn("shrink-0 whitespace-nowrap", ctaDiagnosisNav)}

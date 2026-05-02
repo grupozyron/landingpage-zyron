@@ -134,11 +134,11 @@ export function DiagnosisForm() {
         >
           <CardHeader className="border-b border-white/[0.08] bg-[#1C1C1C]/35 px-5 py-5 backdrop-blur-md sm:px-6 sm:py-6 [.border-b]:pb-5">
             <CardTitle className="font-heading text-lg font-semibold tracking-tight text-foreground sm:text-xl">
-              Solicite sua análise estratégica
+              Solicite seu diagnóstico gratuito
             </CardTitle>
             <CardDescription className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
               Preencha os campos. Avaliamos o encaixe e retornamos com o próximo
-              passo claro.
+              passo objetivo — sem compromisso de contrato na primeira conversa.
             </CardDescription>
           </CardHeader>
 
@@ -257,7 +257,7 @@ export function DiagnosisForm() {
                   htmlFor="challenge"
                   className="flex flex-wrap items-center gap-2 text-[#C8C8D4]"
                 >
-                  Principal desafio hoje
+                  Maior desafio hoje
                   <span className="rounded bg-[#0A0A0A]/80 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-[#B8BDC9] ring-1 ring-[#B8BDC9]/30">
                     opcional
                   </span>

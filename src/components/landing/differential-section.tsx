@@ -8,10 +8,11 @@ import { Reveal } from "./reveal";
 
 const bullets = [
   "Estratégia antes da execução",
-  "Campanhas orientadas por dados",
-  "Landing pages focadas em resultado",
-  "Posicionamento premium",
-  "Melhoria contínua",
+  "Tráfego + conversão + automação",
+  "Foco em resultado real",
+  "Visual premium",
+  "Crescimento orientado por dados",
+  "Atendimento consultivo",
 ];
 
 export function DifferentialSection() {
@@ -26,11 +27,11 @@ export function DifferentialSection() {
             Diferencial
           </p>
           <h2 className="font-heading mt-5 max-w-3xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl sm:leading-tight">
-            Não somos uma agência comum.
+            Por que a ZYRON é diferente?
           </h2>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-            A ZYRON combina estratégia, performance e visão empresarial para
-            entregar crescimento de verdade.
+            Não somos uma agência genérica de posts — somos uma empresa de
+            crescimento com método, tecnologia e disciplina comercial.
           </p>
         </Reveal>
 

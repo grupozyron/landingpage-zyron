@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  Bot,
   Layers,
   Lightbulb,
   MessageCircle,
@@ -33,6 +34,7 @@ type MobileNavOverlayProps = {
 const NAV_ICON: Record<string, LucideIcon> = {
   dor: Zap,
   solucao: Lightbulb,
+  automacao: Bot,
   servicos: Layers,
   case: Trophy,
   "como-funciona": Workflow,
