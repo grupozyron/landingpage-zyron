@@ -32,28 +32,3 @@ export function WhatsAppFooterButton({ className }: { className?: string }) {
   );
 }
 
-/**
- * Ícone compacto para a barra fixa mobile — pareia com o CTA principal sem duplicar texto “WhatsApp”.
- */
-export function WhatsAppDockIcon({ className }: { className?: string }) {
-  const wa = getWhatsAppLeadUrl();
-  if (!wa) return null;
-  return (
-    <a
-      href={wa}
-      target="_blank"
-      rel="noreferrer"
-      className={cn(
-        "inline-flex size-12 shrink-0 items-center justify-center rounded-full",
-        "border border-[#25D366]/45 bg-[#25D366]/12 text-[#DCFCE8]",
-        "shadow-[0_0_22px_-12px_rgb(37_211_102_/0.4)]",
-        "transition-[border-color,background-color,transform] hover:bg-[#25D366]/18 motion-safe:active:scale-[0.97]",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/55 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0A]",
-        className,
-      )}
-      aria-label="WhatsApp — falar com a ZYRON"
-    >
-      <MessageCircle className="size-[22px] text-[#25D366]" strokeWidth={2} aria-hidden />
-    </a>
-  );
-}

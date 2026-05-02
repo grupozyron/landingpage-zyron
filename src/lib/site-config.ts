@@ -13,6 +13,12 @@ export const SITE_INSTAGRAM_URL =
   "https://www.instagram.com/grupozyron/";
 
 /**
+ * WhatsApp comercial (só dígitos, DDI BR). Usado quando `NEXT_PUBLIC_WHATSAPP_NUMBER` não está definido no build (ex.: demo local).
+ * Em produção define sempre `NEXT_PUBLIC_WHATSAPP_NUMBER` no painel do host.
+ */
+export const SITE_WHATSAPP_DIGITS_FALLBACK = "5511947013629";
+
+/**
  * Landing de demonstração do case Elume.
  * Override: `NEXT_PUBLIC_ELUME_LANDING_DEMO_URL` no `.env.local`.
  */

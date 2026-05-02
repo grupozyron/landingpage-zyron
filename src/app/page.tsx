@@ -24,7 +24,7 @@ export default function Home() {
       <main
         id="conteudo-principal"
         tabIndex={-1}
-        className="pb-28 outline-none md:pb-0 focus-visible:ring-2 focus-visible:ring-[#2563FF]/40 focus-visible:ring-offset-4 focus-visible:ring-offset-[#0A0A0A]"
+        className="pb-32 outline-none md:pb-0 focus-visible:ring-2 focus-visible:ring-[#2563FF]/40 focus-visible:ring-offset-4 focus-visible:ring-offset-[#0A0A0A]"
       >
         <ZyronHero />
         <TrustStrip />

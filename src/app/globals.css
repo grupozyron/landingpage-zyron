@@ -161,7 +161,8 @@
     @apply font-sans;
     /* Header 1 linha (menu) + sticky CTA — âncoras não ficam atrás das barras */
     scroll-padding-top: 4.5rem;
-    scroll-padding-bottom: max(5rem, env(safe-area-inset-bottom, 0px));
+    /* Barra fixa + FAB WhatsApp por cima — âncoras não ficam tapadas */
+    scroll-padding-bottom: max(6rem, env(safe-area-inset-bottom, 0px));
     /* Fontes do sistema: renderização nítida em dark */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
