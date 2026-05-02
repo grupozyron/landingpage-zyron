@@ -271,3 +271,39 @@
     background-position: -200% 0;
   }
 }
+
+/* CTA — shimmer no hover */
+.cta-shimmer-hover {
+  position: relative;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cta-shimmer-hover::after {
+    content: "";
+    position: absolute;
+    inset: -50% -40%;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgb(255 255 255 / 0.12) 50%,
+      transparent 60%
+    );
+    transform: translateX(-100%) skewX(-12deg);
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+  }
+  .cta-shimmer-hover:hover::after {
+    opacity: 1;
+    animation: cta-shimmer-sweep 0.55s ease-out;
+  }
+}
+
+@keyframes cta-shimmer-sweep {
+  from {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  to {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}

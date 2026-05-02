@@ -43,7 +43,7 @@ export function MobileStickyCta() {
               "min-h-12 min-w-0 flex-1 px-3 text-[14px] leading-tight shadow-[0_-10px_44px_-14px_rgb(37_99_255_/0.55)] sm:px-5 sm:text-[15px]",
             )}
           >
-            <span className="truncate">Solicitar diagnóstico gratuito</span>
+            <span className="truncate">Minha estratégia →</span>
           </InteractiveHoverButton>
         </div>
       </div>

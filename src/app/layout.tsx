@@ -3,6 +3,7 @@ import { Geist_Mono, Inter, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
+import { AnalyticsScripts } from "@/components/analytics/analytics-scripts";
 import { OrganizationJsonLd } from "@/components/seo/organization-jsonld";
 import { SkipToContent } from "@/components/skip-to-content";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -74,6 +75,7 @@ export default function RootLayout({
         <Script id="zyron-scroll-init" strategy="beforeInteractive">
           {`(function(){try{if('scrollRestoration'in history)history.scrollRestoration='manual';if(!location.hash){scrollTo(0,0);document.documentElement.scrollTop=0;document.body.scrollTop=0;}}catch(e){}})();`}
         </Script>
+        <AnalyticsScripts />
         <OrganizationJsonLd />
         <ThemeProvider>{children}</ThemeProvider>
       </body>

@@ -5,8 +5,6 @@ import { useId } from "react";
 
 import { AccentBorderBeams } from "./beam-highlight";
 
-import { AnimatedCounter } from "./animated-counter";
-
 const cubic = [0.25, 0.1, 0.25, 1] as const;
 
 /** Curva de performance — coordenadas sob altura do gráfico */
@@ -134,13 +132,13 @@ export function HeroVisual() {
           <div className="flex flex-wrap items-start justify-between gap-4 border-b border-white/[0.06] pb-4">
             <div>
               <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#A8A8B3]">
-                receita · painel
+                visualização conceitual
               </p>
               <p className="font-heading mt-2 text-lg font-semibold tracking-tight text-[#F8F8F8]">
-                Crescimento projetável
+                Funil em evolução
               </p>
               <p className="mt-1 max-w-[260px] text-xs leading-relaxed text-[#A8A8B3]">
-                Pipeline ao vivo · CPL · conversão · experimentos
+                Ilustração decorativa — não são métricas reais do seu negócio.
               </p>
             </div>
             <motion.div
@@ -150,12 +148,9 @@ export function HeroVisual() {
               }
               transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
             >
-              <span className="relative flex size-2">
-                <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400/40" />
-                <span className="relative inline-flex size-2 rounded-full bg-emerald-400" />
-              </span>
+              <span className="relative inline-flex size-2 rounded-full bg-emerald-400/90 shadow-[0_0_12px_rgb(52_211_153_/0.45)]" />
               <span className="font-mono text-[11px] font-medium text-[#2563FF]">
-                AO VIVO
+                ritmo
               </span>
             </motion.div>
           </div>
@@ -165,10 +160,10 @@ export function HeroVisual() {
             <div className="relative rounded-xl bg-[#0A0A0A]/50 p-3 ring-1 ring-white/[0.05]">
               <div className="mb-2 flex items-center justify-between px-1">
                 <span className="font-mono text-[10px] text-[#A8A8B3]">
-                  leads qualificados / semana
+                  direção do funil (ilustrativo)
                 </span>
                 <span className="font-mono text-[10px] text-[#2563FF]">
-                  tendência ↑
+                  progressão
                 </span>
               </div>
               <svg
@@ -259,107 +254,49 @@ export function HeroVisual() {
                   </motion.g>
                 )}
               </svg>
-              {/* Spark row */}
-              <div className="mt-3 flex h-9 items-end gap-1 px-1">
-                {[40, 52, 48, 64, 58, 72, 68, 88, 82, 94].map((h, i) => (
-                  <motion.div
-                    key={i}
-                    className="flex-1 origin-bottom rounded-sm bg-gradient-to-t from-[#2563FF]/25 to-[#2563FF]/85 shadow-[0_0_12px_-4px_rgb(37_99_255_/0.45)]"
-                    initial={reduce ? false : { height: 0, opacity: 0 }}
-                    animate={
-                      reduce
-                        ? { height: `${h}%`, opacity: 1 }
-                        : {
-                            height: `${h}%`,
-                            opacity: 1,
-                            scaleY: [1, 1.06, 1],
-                          }
-                    }
-                    style={{ maxHeight: "100%" }}
-                    transition={{
-                      height: {
-                        duration: 0.55,
-                        delay: 0.35 + i * 0.035,
-                        ease: cubic,
-                      },
-                      opacity: {
-                        duration: 0.45,
-                        delay: 0.35 + i * 0.035,
-                        ease: cubic,
-                      },
-                      scaleY: {
-                        duration: 2.4 + i * 0.08,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: 1.2 + i * 0.07,
-                      },
-                    }}
-                  />
-                ))}
+              <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-[#0A0A0A] ring-1 ring-white/[0.06]">
+                <motion.div
+                  className="h-full rounded-full bg-gradient-to-r from-[#2563FF]/40 to-[#2563FF]"
+                  initial={reduce ? false : { width: "0%" }}
+                  animate={{ width: "72%" }}
+                  transition={{ duration: 1.2, delay: 0.4, ease: cubic }}
+                  aria-hidden
+                />
               </div>
+              <p className="mt-2 px-1 font-mono text-[9px] text-[#A8A8B3]/90">
+                Barras genéricas removidas — foco em método, não em métricas fictícias.
+              </p>
             </div>
 
-            {/* KPIs */}
+            {/* Pilares (copy qualitativo — sem números inventados) */}
             <div className="flex flex-col gap-3">
               {[
                 {
-                  label: "Taxa de conversão",
-                  child: (
-                    <motion.span
-                      className="text-2xl font-semibold tabular-nums tracking-tight text-[#F8F8F8]"
-                      initial={reduce ? false : { opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.45, duration: 0.4 }}
-                    >
-                      4,8%
-                    </motion.span>
-                  ),
-                  delta: "+19% vs. linha base",
-                  deltaColor: "text-[#2563FF]",
+                  title: "Tráfego direcionado",
+                  line: "Campanhas para o perfil certo — não vaidade de impressões.",
                 },
                 {
-                  label: "CPL médio",
-                  child: (
-                    <span className="text-2xl font-semibold tabular-nums tracking-tight text-[#F8F8F8]">
-                      <span className="text-[#A8A8B3]">−</span>
-                      <AnimatedCounter end={28} suffix="%" />
-                    </span>
-                  ),
-                  delta: "eficiência",
-                  deltaColor: "text-[#A8A8B3]",
+                  title: "Landing com intenção",
+                  line: "Página que pede contato com clareza comercial.",
                 },
                 {
-                  label: "Cadência de testes",
-                  child: (
-                    <span className="text-2xl font-semibold tabular-nums tracking-tight text-[#F8F8F8]">
-                      <AnimatedCounter end={12} suffix="" />{" "}
-                      <span className="text-base font-normal text-[#A8A8B3]">
-                        /mês
-                      </span>
-                    </span>
-                  ),
-                  delta: "hipóteses em produção",
-                  deltaColor: "text-[#A8A8B3]",
+                  title: "Automação no ritmo",
+                  line: "WhatsApp e fluxos para não perder oportunidade.",
                 },
-              ].map((kpi, i) => (
+              ].map((row, i) => (
                 <motion.div
-                  key={kpi.label}
+                  key={row.title}
                   className="rounded-xl bg-[#1C1C1C]/95 p-4 ring-1 ring-white/[0.06]"
                   initial={reduce ? false : { opacity: 0, x: 12 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.45, delay: 0.2 + i * 0.1, ease: cubic }}
                 >
                   <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#A8A8B3]">
-                    {kpi.label}
+                    {row.title}
                   </p>
-                  <div className="mt-2 flex items-end justify-between gap-2">
-                    {kpi.child}
-                    <span
-                      className={`font-mono text-[10px] ${kpi.deltaColor}`}
-                    >
-                      {kpi.delta}
-                    </span>
-                  </div>
+                  <p className="mt-2 text-sm leading-relaxed text-[#C8C8D4]">
+                    {row.line}
+                  </p>
                 </motion.div>
               ))}
             </div>

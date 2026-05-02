@@ -19,14 +19,12 @@ function InstagramIcon({ className }: { className?: string }) {
 }
 
 const footerNav = [
-  { href: "#dor", label: "Dores" },
+  { href: "#dor", label: "Desafios" },
   { href: "#solucao", label: "Solução" },
-  { href: "#automacao", label: "Automação" },
-  { href: "#servicos", label: "Serviços" },
-  { href: "#case", label: "Casos" },
-  { href: "#como-funciona", label: "Como funciona" },
+  { href: "#case", label: "Case" },
+  { href: "#processo", label: "Processo" },
   { href: "#contact", label: "Contato" },
-  { href: "#diagnosis", label: "Diagnóstico" },
+  { href: "#diagnosis", label: "Formulário" },
 ];
 
 export function SiteFooter() {
@@ -52,9 +50,8 @@ export function SiteFooter() {
               </p>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Growth &amp; automação premium — tráfego pago, landing estratégica,
-              IA no WhatsApp e sistemas de aquisição para negócios tradicionais que
-              precisam escalar com método.
+              Tráfego pago, landing e automação para empresas B2B e serviços premium
+              que precisam de aquisição previsível — sem improviso.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <WhatsAppFooterButton />
@@ -113,7 +110,7 @@ export function SiteFooter() {
                 href="#diagnosis"
                 className="font-medium text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:text-[#6E9FFF]"
               >
-                solicitar o diagnóstico gratuito
+                pedir análise estratégica
               </HashLink>
               .
             </p>

@@ -13,12 +13,10 @@ import { cn } from "@/lib/utils";
 import { MobileNavOverlay } from "./mobile-nav-overlay";
 
 const nav = [
-  { href: "#dor", label: "Dores" },
+  { href: "#dor", label: "Desafios" },
   { href: "#solucao", label: "Solução" },
-  { href: "#automacao", label: "Automação" },
-  { href: "#servicos", label: "Serviços" },
-  { href: "#case", label: "Casos" },
-  { href: "#como-funciona", label: "Como funciona" },
+  { href: "#case", label: "Case" },
+  { href: "#processo", label: "Processo" },
   { href: "#contact", label: "Contato" },
 ] as const;
 
@@ -27,7 +25,6 @@ const SECTION_IDS = nav.map((n) => n.href.replace("#", "")) as readonly string[]
 const navLinkBase =
   "touch-manipulation whitespace-nowrap rounded-full px-3 py-2.5 text-[13px] font-medium transition-[color,background-color,box-shadow] duration-200 lg:px-4 flex min-h-[44px] shrink-0 items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563FF]/55 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0A]";
 
-/** justify-start: com overflow-x, justify-center cortava o primeiro item (“Dores”). */
 const pillWrapClass =
   "flex w-max max-w-full min-w-0 flex-nowrap items-center justify-start gap-0.5 overflow-x-auto rounded-full border border-white/[0.09] bg-[#101018]/95 p-1 ps-1.5 pe-1.5 shadow-[inset_0_1px_0_0_rgb(255_255_255_/0.05)] [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden";
 
@@ -101,9 +98,12 @@ export function ZyronHeader() {
           <div className="flex shrink-0 items-center justify-self-end pl-2">
             <InteractiveHoverButton
               href="#diagnosis"
-              className={cn("shrink-0 whitespace-nowrap", ctaDiagnosisNav)}
+              className={cn(
+                "cta-shimmer-hover max-w-[220px] truncate sm:max-w-none",
+                ctaDiagnosisNav,
+              )}
             >
-              Diagnóstico gratuito
+              Estratégia →
             </InteractiveHoverButton>
           </div>
         </div>

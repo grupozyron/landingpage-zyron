@@ -2,7 +2,6 @@
 
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { ctaDiagnosis } from "@/lib/cta-styles";
-import { AuroraText } from "@/registry/magicui/aurora-text";
 import { getWhatsAppLeadUrl } from "@/lib/whatsapp";
 
 import { BeamHighlight } from "./beam-highlight";
@@ -23,27 +22,26 @@ export function FinalCta() {
             Próximo passo
           </p>
           <h2 className="font-heading mt-5 max-w-3xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl sm:leading-tight">
-            Sua empresa já provou valor.{" "}
-            <AuroraText className="font-semibold">
-              Agora precisa de estrutura para crescer.
-            </AuroraText>
+            Pronto para crescer como as grandes?
           </h2>
           <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-muted-foreground sm:text-lg">
-            Solicite um diagnóstico gratuito e veja como a ZYRON pode modernizar
-            sua operação e aumentar seus resultados.
+            Em 30 minutos de conversa, você entende o que está travando seu
+            crescimento e quais são os próximos passos — sem enrolação.
           </p>
-          <p className="mt-4 max-w-xl font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground/90">
-            Vagas de onboarding limitadas por mês · retorno em até dois dias úteis
-          </p>
-          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Depois do envio: triagem do perfil e retorno por WhatsApp ou e-mail em
-            até{" "}
-            <span className="text-foreground/90">dois dias úteis</span>. Primeira
-            conversa para alinhar expectativa — sem compromisso de contrato.
+          <p className="mt-5 flex flex-wrap items-center gap-2 text-[13px] leading-snug text-muted-foreground sm:text-sm">
+            <span
+              className="relative flex size-2 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_12px_rgb(52_211_153_/0.45)]"
+              aria-hidden
+            />
+            <span>
+              <strong className="font-semibold text-foreground">Vagas limitadas</strong>
+              {" · "}
+              retorno em até 2 dias úteis
+            </span>
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <InteractiveHoverButton href="#diagnosis" className={ctaDiagnosis}>
-              Quero crescer com a ZYRON
+              Quero minha análise estratégica →
             </InteractiveHoverButton>
             {wa ? (
               <InteractiveHoverButton
