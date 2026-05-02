@@ -1,8 +1,12 @@
+import { ScrollDepthTracker } from "@/components/analytics/scroll-depth-tracker";
 import { ScrollHashHandler } from "@/components/scroll-hash-handler";
+import { AudienceSegments } from "@/components/landing/audience-segments";
 import { CaseStudy } from "@/components/landing/case-study";
 import { FinalCta } from "@/components/landing/final-cta";
 import { FloatingWhatsApp } from "@/components/landing/floating-whatsapp";
 import { GridBackground } from "@/components/landing/grid-background";
+import { IaWhatsAppSection } from "@/components/landing/ia-whatsapp-section";
+import { LogoWall } from "@/components/landing/logo-wall";
 import { MobileStickyCta } from "@/components/landing/mobile-sticky-cta";
 import { PainSection } from "@/components/landing/pain-section";
 import { ProcessSection } from "@/components/landing/process-section";
@@ -16,6 +20,7 @@ export default function Home() {
   return (
     <>
       <ScrollHashHandler />
+      <ScrollDepthTracker />
       <GridBackground />
       <ZyronHeader />
       <main
@@ -24,8 +29,11 @@ export default function Home() {
         className="pb-32 outline-none md:pb-0 focus-visible:ring-2 focus-visible:ring-[#2563FF]/40 focus-visible:ring-offset-4 focus-visible:ring-offset-[#0A0A0A]"
       >
         <ZyronHero />
+        <LogoWall />
+        <AudienceSegments />
         <PainSection />
         <SolutionSection />
+        <IaWhatsAppSection />
         <CaseStudy />
         <ProcessSection />
         <TestimonialsSection />

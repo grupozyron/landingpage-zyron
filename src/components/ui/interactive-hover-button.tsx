@@ -15,29 +15,22 @@ const shellClass = cn(
   "motion-safe:active:scale-[0.98]",
 );
 
+/** Uma única instância do rótulo — evita texto duplicado no DOM (bug de CTAs “colados”). */
 function InteractiveHoverButtonBody({ children }: { children: ReactNode }) {
   return (
-    <>
-      <div className="flex items-center justify-center gap-2">
-        <span
-          className="size-2 shrink-0 rounded-full bg-primary transition-transform duration-300 group-hover:scale-[100.8]"
-          aria-hidden
-        />
-        <span className="inline-block transition-all duration-300 group-hover:translate-x-12 group-hover:opacity-0">
-          {children}
-        </span>
-      </div>
-      <div
-        className={cn(
-          "pointer-events-none absolute inset-0 z-10 flex translate-x-12 items-center justify-center gap-2",
-          "text-primary-foreground opacity-0 transition-all duration-300",
-          "group-hover:-translate-x-1 group-hover:opacity-100",
-        )}
-      >
-        <span>{children}</span>
-        <ArrowRight className="size-4 shrink-0" aria-hidden />
-      </div>
-    </>
+    <span className="relative inline-flex min-w-0 max-w-full items-center justify-center gap-2">
+      <span
+        className="size-2 shrink-0 rounded-full bg-primary transition-transform duration-150 group-hover:scale-110"
+        aria-hidden
+      />
+      <span className="min-w-0 truncate transition-[transform,box-shadow] duration-150 motion-safe:group-hover:-translate-y-px">
+        {children}
+      </span>
+      <ArrowRight
+        className="size-4 shrink-0 -translate-x-1 opacity-0 transition duration-150 motion-safe:group-hover:translate-x-0 motion-safe:group-hover:opacity-100"
+        aria-hidden
+      />
+    </span>
   );
 }
 

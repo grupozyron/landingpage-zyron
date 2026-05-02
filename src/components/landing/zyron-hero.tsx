@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { fadeUp, stagger } from "@/lib/motion-variants";
 import { AuroraText } from "@/registry/magicui/aurora-text";
 
+import { HeroSocialProof } from "./hero-social-proof";
 import { HeroVisual } from "./hero-visual";
 
 const proofLines = [
@@ -130,6 +131,10 @@ export function ZyronHero() {
                 </li>
               ))}
             </motion.ul>
+
+            <motion.div variants={fadeUp} className="mt-2 lg:max-w-xl">
+              <HeroSocialProof className="mx-auto text-center lg:mx-0 lg:text-left" />
+            </motion.div>
           </motion.div>
 
           <motion.div

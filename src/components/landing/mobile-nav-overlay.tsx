@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  Bot,
   Lightbulb,
   MessageCircle,
   Sparkles,
@@ -32,6 +33,7 @@ type MobileNavOverlayProps = {
 const NAV_ICON: Record<string, LucideIcon> = {
   dor: Zap,
   solucao: Lightbulb,
+  "ia-whatsapp": Bot,
   case: Trophy,
   processo: Workflow,
   contact: MessageCircle,

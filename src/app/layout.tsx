@@ -27,7 +27,7 @@ const geistMono = Geist_Mono({
 });
 
 const SEO_DESCRIPTION =
-  "ZYRON é uma empresa de crescimento premium do Grupo ZYRON: tráfego pago, landing pages estratégicas e aquisição previsível para negócios tradicionais que querem modernizar e escalar.";
+  "A ZYRON transforma negócios tradicionais em empresas digitais. Tráfego pago, landing pages e IA para WhatsApp — com método e resultado previsível.";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -38,23 +38,41 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CANONICAL_URL),
-  title: "ZYRON | Empresas sérias prontas para crescer no digital",
+  title: "ZYRON | Crescimento digital para empresas sérias",
   description: SEO_DESCRIPTION,
-  /* Favicons: `public/favicon/icon.svg` (incluído). Após adicionares PNG/ICO, vê public/favicon/MEDIDAS.md */
   icons: {
     icon: [{ url: "/favicon/icon.svg", type: "image/svg+xml" }],
   },
+  alternates: {
+    canonical: SITE_CANONICAL_URL,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    title: "ZYRON | Empresas sérias prontas para crescer no digital",
-    description: SEO_DESCRIPTION,
+    title: "ZYRON | Crescimento digital para empresas sérias",
+    description:
+      "Tráfego pago, landing pages premium e IA para WhatsApp. Solicite uma análise estratégica.",
     siteName: "ZYRON",
     locale: "pt_BR",
     type: "website",
+    url: SITE_CANONICAL_URL,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "ZYRON — Crescimento digital para empresas sérias",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ZYRON | Empresas sérias prontas para crescer no digital",
-    description: SEO_DESCRIPTION,
+    title: "ZYRON | Crescimento digital para empresas sérias",
+    description:
+      "Tráfego pago, landing pages premium e IA para WhatsApp. Solicite uma análise estratégica.",
+    images: ["/opengraph-image"],
   },
 };
 

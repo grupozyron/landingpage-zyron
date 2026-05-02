@@ -15,6 +15,7 @@ import { MobileNavOverlay } from "./mobile-nav-overlay";
 const nav = [
   { href: "#dor", label: "Desafios" },
   { href: "#solucao", label: "Solução" },
+  { href: "#ia-whatsapp", label: "IA" },
   { href: "#case", label: "Case" },
   { href: "#processo", label: "Processo" },
   { href: "#contact", label: "Contato" },
