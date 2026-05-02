@@ -1,0 +1,270 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "animate.css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), ui-sans-serif;
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-space-grotesk), ui-sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-gold: var(--gold);
+  --color-silver: var(--silver);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+
+  --animate-aurora: aurora 10s ease-in-out infinite;
+
+  @keyframes aurora {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+/* ZYRON — identidade visual (brand book) */
+:root {
+  /* Animate.css — ritmo premium (global) */
+  --animate-duration: 0.65s;
+  --animate-delay: 0s;
+
+  --background: #0a0a0a;
+  --foreground: #f8f8f8;
+  --card: #1c1c1c;
+  --card-foreground: #f8f8f8;
+  --popover: #1c1c1c;
+  --popover-foreground: #f8f8f8;
+  --primary: #2563ff;
+  --primary-foreground: #f8f8f8;
+  --secondary: #1c1c1c;
+  --secondary-foreground: #f8f8f8;
+  --muted: #1c1c1c;
+  --muted-foreground: #b8bdc9;
+  --accent: #2563ff;
+  --accent-foreground: #f8f8f8;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: rgb(184 189 201 / 0.15);
+  --input: rgb(255 255 255 / 0.1);
+  --ring: #2563ff;
+  --silver: #b8bdc9;
+  --gold: #b8bdc9;
+  --chart-1: #2563ff;
+  --chart-2: #b8bdc9;
+  --chart-3: #1c1c1c;
+  --chart-4: #f8f8f8;
+  --chart-5: #b8bdc9;
+  --radius: 0.625rem;
+  --sidebar: #1c1c1c;
+  --sidebar-foreground: #f8f8f8;
+  --sidebar-primary: #2563ff;
+  --sidebar-primary-foreground: #f8f8f8;
+  --sidebar-accent: #1c1c1c;
+  --sidebar-accent-foreground: #f8f8f8;
+  --sidebar-border: rgb(184 189 201 / 0.15);
+  --sidebar-ring: #2563ff;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #f8f8f8;
+  --card: #1c1c1c;
+  --card-foreground: #f8f8f8;
+  --popover: #1c1c1c;
+  --popover-foreground: #f8f8f8;
+  --primary: #2563ff;
+  --primary-foreground: #f8f8f8;
+  --secondary: #1c1c1c;
+  --secondary-foreground: #f8f8f8;
+  --muted: #1c1c1c;
+  --muted-foreground: #b8bdc9;
+  --accent: #2563ff;
+  --accent-foreground: #f8f8f8;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgb(184 189 201 / 0.15);
+  --input: rgb(255 255 255 / 0.12);
+  --ring: #2563ff;
+  --gold: #b8bdc9;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+    /* Evita scroll horizontal por filhos largos (mobile / tablet) */
+    overflow-x: clip;
+    @apply font-sans;
+    /* Header 2 linhas no mobile + sticky CTA — âncoras não ficam atrás da barra */
+    scroll-padding-top: 7rem;
+    scroll-padding-bottom: max(5.5rem, env(safe-area-inset-bottom, 0px));
+    /* Fontes do sistema: renderização nítida em dark */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 5.5rem;
+      scroll-padding-bottom: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    /* Evita hifenização automática no meio de palavras (comum com lang=pt-BR em browsers estreitos). */
+    hyphens: none;
+    -webkit-hyphens: none;
+    /* Notch / gesture bar — margem extra sem quebrar desktop */
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+  }
+  ::selection {
+    background: rgb(37 99 255 / 0.35);
+    color: var(--foreground);
+  }
+  :focus-visible {
+    outline: none;
+  }
+  @media (prefers-contrast: more) {
+    :root {
+      --border: rgb(255 255 255 / 0.22);
+    }
+  }
+}
+
+/* Texto de título — quebras mais naturais em PT */
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility text-pretty {
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .qv-animate-grid,
+  .qv-animate-orb {
+    animation: none !important;
+  }
+  .animate-aurora {
+    animation: none !important;
+    background-image: none !important;
+    -webkit-text-fill-color: #2563ff !important;
+    color: #2563ff !important;
+    background-clip: unset !important;
+    -webkit-background-clip: unset !important;
+  }
+}
+
+@keyframes qv-grid-shift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(32px, 32px, 0);
+  }
+}
+
+@keyframes qv-orb-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes qv-scan {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.12;
+  }
+  85% {
+    opacity: 0.12;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes qv-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
