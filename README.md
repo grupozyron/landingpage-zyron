@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-**Cloudflare Workers (OpenNext):** o `wrangler.jsonc` inclui `build.command` → `npm run cf:build`, por isso **`npx wrangler deploy`** corre o OpenNext antes de publicar (gera `.open-next/`). No painel podes manter **Build:** `npm run build` e **Deploy:** `npx wrangler deploy`, ou usar só **`npm run cf:build`** no build e o mesmo deploy. Localmente: **`npm run deploy`** faz build OpenNext + deploy.
+**Cloudflare Workers (OpenNext):** em **`open-next.config.ts`** está `buildCommand: "npx next build"` para evitar recursão. O script **`npm run build`** corre **`opennextjs-cloudflare build`** (gera `.open-next/`). No painel: **Build:** `npm run build` · **Deploy:** `npx wrangler deploy`. Para só compilar Next sem bundle Worker: **`npm run build:next`**.
 
 Site em produção: [https://grupozyron.com.br](https://grupozyron.com.br) · Instagram [@grupozyron](https://www.instagram.com/grupozyron/).
 
