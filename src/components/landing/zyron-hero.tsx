@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 
+import { HashLink } from "@/components/hash-link";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import {
   ctaDiagnosisHeroPrimary,
@@ -87,11 +88,17 @@ export function ZyronHero() {
                 href="#como-funciona"
                 className={cn(
                   ctaDiagnosisSecondary,
-                  "w-full sm:w-auto sm:min-w-[240px]",
+                  "hidden md:inline-flex w-full sm:w-auto sm:min-w-[240px]",
                 )}
               >
                 Ver como funciona
               </InteractiveHoverButton>
+              <HashLink
+                href="#como-funciona"
+                className="md:hidden py-1 text-center text-sm font-medium text-muted-foreground underline decoration-white/15 underline-offset-[6px] transition-colors hover:text-foreground"
+              >
+                Ver como funciona
+              </HashLink>
             </motion.div>
           </motion.div>
 

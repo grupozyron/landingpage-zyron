@@ -11,4 +11,4 @@ npm run dev
 
 Site em produção: [https://grupozyron.com.br](https://grupozyron.com.br) · Instagram [@grupozyron](https://www.instagram.com/grupozyron/).
 
-Abrir [http://localhost:3000](http://localhost:3000). Variáveis opcionais em `.env.local` (Resend, WhatsApp, `NEXT_PUBLIC_SITE_URL`, Instagram).
+Abrir [http://localhost:3000](http://localhost:3000). Variáveis opcionais em `.env.local`: Resend (`RESEND_API_KEY`), **WhatsApp** (`NEXT_PUBLIC_WHATSAPP_NUMBER` com DDI 55…), site, Instagram.

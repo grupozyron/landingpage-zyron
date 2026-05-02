@@ -49,13 +49,17 @@ export function ScrollHashHandler() {
       };
     }
 
-    /* Sem âncora: topo antes do paint e novamente após restaurações tardias do browser. */
+    /* Sem âncora: topo antes do paint e novamente após layout/hidratação (evita “abrir no meio”). */
     scrollToTopHard();
     const t0 = window.setTimeout(scrollToTopHard, 0);
     const t1 = window.setTimeout(scrollToTopHard, 100);
+    const t2 = window.setTimeout(scrollToTopHard, 320);
+    const t3 = window.setTimeout(scrollToTopHard, 600);
     return () => {
       window.clearTimeout(t0);
       window.clearTimeout(t1);
+      window.clearTimeout(t2);
+      window.clearTimeout(t3);
     };
   }, [pathname]);
 

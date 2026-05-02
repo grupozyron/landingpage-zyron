@@ -1,5 +1,6 @@
 "use client";
 
+import { Menu } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { SiteLogo } from "@/components/brand/site-logo";
@@ -8,6 +9,8 @@ import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button
 import { useActiveSection } from "@/hooks/use-active-section";
 import { ctaDiagnosisNav } from "@/lib/cta-styles";
 import { cn } from "@/lib/utils";
+
+import { MobileNavOverlay } from "./mobile-nav-overlay";
 
 const nav = [
   { href: "#dor", label: "Tensão" },
@@ -28,6 +31,7 @@ const pillWrapClass =
 
 export function ZyronHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const activeId = useActiveSection(SECTION_IDS);
 
   useEffect(() => {
@@ -36,6 +40,15 @@ export function ZyronHeader() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [menuOpen]);
 
   const links = nav.map((item) => {
     const id = item.href.replace("#", "");
@@ -71,46 +84,66 @@ export function ZyronHeader() {
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#2563FF]/40 to-transparent"
       />
       <div className="relative mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-        <div className="hidden h-16 items-center justify-between gap-3 md:flex">
-          <SiteLogo variant="header" />
+        <div className="hidden h-16 md:grid md:w-full md:grid-cols-[auto_minmax(0,1fr)_auto] md:items-center md:gap-3 lg:gap-4">
+          <div className="min-w-0 justify-self-start">
+            <SiteLogo variant="header" />
+          </div>
 
           <nav
-            className="min-w-0 flex-1 justify-center px-1 lg:px-3"
+            className="flex min-w-0 justify-center justify-self-stretch px-1 lg:px-2"
             aria-label="Navegação principal"
           >
-            <div className={cn(pillWrapClass, "md:inline-flex md:w-auto md:max-w-none md:overflow-visible")}>
+            <div
+              className={cn(
+                pillWrapClass,
+                "max-w-full min-w-0 md:inline-flex md:justify-center",
+              )}
+            >
               {links}
             </div>
           </nav>
 
-          <InteractiveHoverButton
-            href="#diagnosis"
-            className={cn("shrink-0", ctaDiagnosisNav)}
-          >
-            Diagnóstico gratuito
-          </InteractiveHoverButton>
+          <div className="flex shrink-0 items-center justify-self-end">
+            <InteractiveHoverButton
+              href="#diagnosis"
+              className={cn("shrink-0 whitespace-nowrap", ctaDiagnosisNav)}
+            >
+              Diagnóstico gratuito
+            </InteractiveHoverButton>
+          </div>
         </div>
 
         <div className="md:hidden">
-          <div className="flex h-14 items-center justify-between gap-2">
-            <SiteLogo variant="header" />
-            <InteractiveHoverButton
-              href="#diagnosis"
-              className={cn("shrink-0 max-sm:px-3", ctaDiagnosisNav)}
+          <div className="flex h-14 items-center justify-between gap-3">
+            <div className="min-w-0 flex-1">
+              <SiteLogo variant="header" className="max-w-full" />
+            </div>
+            <button
+              type="button"
+              aria-expanded={menuOpen}
+              aria-controls="zyron-mobile-nav"
+              aria-haspopup="dialog"
+              aria-label="Abrir menu de navegação"
+              onClick={() => setMenuOpen(true)}
+              className={cn(
+                "inline-flex size-11 shrink-0 items-center justify-center rounded-full",
+                "border border-white/[0.12] bg-[#141418]/90 text-foreground shadow-sm",
+                "transition-[border-color,background-color,color] hover:border-white/[0.18] hover:bg-[#1a1a20]",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2563FF]/55 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0A]",
+              )}
             >
-              <span className="hidden min-[360px]:inline">Diagnóstico gratuito</span>
-              <span className="min-[360px]:hidden">Diagnóstico</span>
-            </InteractiveHoverButton>
+              <Menu className="size-[22px]" aria-hidden strokeWidth={2} />
+            </button>
           </div>
-
-          <nav
-            className="-mx-4 border-t border-white/[0.06] px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2.5"
-            aria-label="Navegação principal"
-          >
-            <div className={pillWrapClass}>{links}</div>
-          </nav>
         </div>
       </div>
+
+      <MobileNavOverlay
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        items={nav}
+        activeId={activeId}
+      />
     </header>
   );
 }

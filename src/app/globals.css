@@ -154,12 +154,14 @@
   html {
     color-scheme: dark;
     scroll-behavior: smooth;
+    /* Reduz saltos de scroll quando imagens/fontes entram (Chrome scroll anchoring). */
+    overflow-anchor: none;
     /* Evita scroll horizontal por filhos largos (mobile / tablet) */
     overflow-x: clip;
     @apply font-sans;
-    /* Header 2 linhas no mobile + sticky CTA — âncoras não ficam atrás da barra */
-    scroll-padding-top: 7rem;
-    scroll-padding-bottom: max(5.5rem, env(safe-area-inset-bottom, 0px));
+    /* Header 1 linha (menu) + sticky CTA — âncoras não ficam atrás das barras */
+    scroll-padding-top: 4.5rem;
+    scroll-padding-bottom: max(5rem, env(safe-area-inset-bottom, 0px));
     /* Fontes do sistema: renderização nítida em dark */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

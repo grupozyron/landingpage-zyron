@@ -1,0 +1,28 @@
+/**
+ * Nome do Worker DEVE ser igual ao projeto no Cloudflare (ex.: landingpage-zyron).
+ * WORKER_SELF_REFERENCE.service tem de ser o mesmo valor — senão o deploy falha (10143).
+ * Se renomeares o Worker no dashboard, atualiza "name" e "service" em conjunto.
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "landingpage-zyron",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-05-02",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".open-next/assets"
+  },
+  "images": {
+    "binding": "IMAGES"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "landingpage-zyron"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

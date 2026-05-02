@@ -3,6 +3,8 @@ import { HashLink } from "@/components/hash-link";
 import { SITE_INSTAGRAM_URL } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
+import { WhatsAppFooterButton } from "./whatsapp-cta";
+
 function InstagramIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -54,6 +56,7 @@ export function SiteFooter() {
               precisam modernizar e crescer com previsibilidade.
             </p>
             <div className="flex flex-wrap items-center gap-3">
+              <WhatsAppFooterButton />
               <a
                 href={SITE_INSTAGRAM_URL}
                 target="_blank"
@@ -97,19 +100,19 @@ export function SiteFooter() {
               Contato
             </h2>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              Quer estruturar aquisição com método?{" "}
+              Prefere WhatsApp? Use o botão ao lado ou{" "}
               <HashLink
                 href="#contact"
                 className="font-medium text-foreground underline decoration-white/15 underline-offset-4 transition-colors hover:decoration-primary/60"
               >
-                Fale conosco
-              </HashLink>{" "}
-              ou{" "}
+                veja o formulário
+              </HashLink>
+              . Também pode{" "}
               <HashLink
                 href="#diagnosis"
                 className="font-medium text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:text-[#6E9FFF]"
               >
-                solicite o diagnóstico gratuito
+                solicitar o diagnóstico gratuito
               </HashLink>
               .
             </p>

@@ -15,7 +15,8 @@ export function useActiveSection(sectionIds: readonly string[]) {
 
     const line = () => {
       if (typeof window === "undefined") return 110;
-      return window.innerWidth < 768 ? 152 : 108;
+      /* Header mobile ~56px (h-14) + margem — antes 152px com nav em 2ª linha */
+      return window.innerWidth < 768 ? 80 : 108;
     };
 
     const read = () => {
