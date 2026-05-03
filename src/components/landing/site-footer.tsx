@@ -51,7 +51,7 @@ export function SiteFooter() {
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
               Tráfego pago, landing e automação para empresas B2B e serviços premium
-              que precisam de aquisição previsível — sem improviso.
+              que precisam de aquisição previsível, sem improviso.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <WhatsAppFooterButton />
@@ -70,7 +70,7 @@ export function SiteFooter() {
                 Instagram
               </a>
               <span className="text-xs text-[#6B6B78]">
-                @grupozyron — conteúdo e bastidores.
+                @grupozyron · conteúdo e bastidores.
               </span>
             </div>
           </div>

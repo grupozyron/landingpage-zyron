@@ -30,7 +30,7 @@ const METHODOLOGY_PILLARS = [
 ] as const;
 
 const microProofs = [
-  "Aceleramos 4 novos clientes por mês — retorno em até 2 dias úteis",
+  "Aceleramos 4 novos clientes por mês, com retorno em até 2 dias úteis",
   "Tráfego, landing e automação no mesmo método",
   "Menos dependência só de indicação",
 ];
@@ -111,7 +111,7 @@ export function ZyronHero() {
             <Reveal delayIndex={2}>
               <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-white/55 md:text-lg lg:mx-0">
                 A ZYRON constrói o sistema de aquisição que sua empresa precisa para
-                parar de depender de indicação e começar a crescer com previsibilidade —
+                parar de depender de indicação e começar a crescer com previsibilidade,
                 sem improvisação.
               </p>
             </Reveal>

@@ -37,7 +37,7 @@ export function ServicesSection() {
             O que a ZYRON constrói para sua empresa
           </h2>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
-            Um ecossistema integrado — da primeira impressão ao contato
+            Um ecossistema integrado, da primeira impressão ao contato
             qualificado no WhatsApp.
           </p>
         </Reveal>

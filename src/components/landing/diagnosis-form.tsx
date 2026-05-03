@@ -200,7 +200,7 @@ export function DiagnosisForm() {
             </CardTitle>
             <CardDescription className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
               {step === 1
-                ? "Nome, WhatsApp e segmento — depois empresa e cidade."
+                ? "Nome, WhatsApp e segmento; depois empresa e cidade."
                 : "Quase pronto: onde você atua e qual é o foco agora."}
             </CardDescription>
           </CardHeader>
@@ -318,7 +318,7 @@ export function DiagnosisForm() {
                       id="city"
                       name="city"
                       autoComplete="address-level2"
-                      placeholder="Ex.: São Paulo — ABC"
+                      placeholder="Ex.: São Paulo / ABC"
                       value={city}
                       onChange={(ev) => setCity(ev.target.value)}
                       onBlur={() => setTouched((t) => ({ ...t, city: true }))}

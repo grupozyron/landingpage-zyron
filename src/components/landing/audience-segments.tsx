@@ -50,7 +50,7 @@ const cards: Card[] = [
     id: "local",
     title: "Negócios locais premium",
     pain: "Concorrente menor aparece mais no mapa e no feed.",
-    outcome: "Presença local + oferta clara — sem parecer promoção genérica.",
+    outcome: "Presença local + oferta clara, sem parecer promoção genérica.",
     segmentValue: "Serviço local premium",
   },
   {
@@ -89,7 +89,7 @@ export function AudienceSegments() {
             Para quem a ZYRON mais performa
           </h2>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
-            Toque para ver dor típica e resultado esperado — e já ir ao formulário com o
+            Toque para ver dor típica e resultado esperado e já ir ao formulário com o
             segmento certo.
           </p>
         </Reveal>

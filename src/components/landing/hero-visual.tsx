@@ -70,52 +70,64 @@ function HeroDashboardKpis() {
 
   const cell = cn(
     "rounded-lg bg-[#1C1C1C]/95 p-3 ring-1 ring-white/[0.06]",
-    "transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:ring-[#0066FF]/35",
+    "transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:ring-white/[0.1]",
   );
+
+  const cellPrimary = cn(
+    cell,
+    "row-span-2 flex flex-col justify-between py-3.5 ring-[#0066FF]/15",
+    "hover:ring-[#0066FF]/40",
+  );
+
+  const cellSecondary = cn(cell, "hover:ring-[#0066FF]/22");
 
   return (
     <div ref={ref} className="flex flex-col gap-2">
-      <div className="grid grid-cols-2 gap-2">
-        <div className={cell}>
+      <div className="grid grid-cols-2 gap-2 font-mono">
+        <div className={cellPrimary}>
           <p className="mb-1 text-[10px] font-medium uppercase tracking-widest text-white/40">
             Leads qualificados / semana
           </p>
-          <p className="font-heading text-2xl font-bold tabular-nums tracking-tight text-white sm:text-3xl">
+          <p className="text-3xl font-semibold tabular-nums tracking-tight text-white sm:text-[2rem]">
             {leads}
           </p>
-          <p className={cn("mt-1.5", badgeDelta)}>{VARIACAO_LEADS} vs. período anterior</p>
+          <p className={cn("mt-2", badgeDelta, "tabular-nums")}>
+            {VARIACAO_LEADS} vs. período anterior
+          </p>
         </div>
-        <div className={cell}>
+        <div className={cellSecondary}>
           <p className="mb-1 text-[10px] font-medium uppercase tracking-widest text-white/40">
             Taxa de conversão
           </p>
-          <p className="font-heading text-2xl font-bold tabular-nums tracking-tight text-white sm:text-3xl">
+          <p className="text-xl font-semibold tabular-nums tracking-tight text-white sm:text-2xl">
             {pctStr}%
           </p>
-          <p className={cn("mt-1.5", badgeDelta)}>vs. linha base</p>
+          <p className={cn("mt-1.5", badgeDelta, "tabular-nums")}>vs. linha base</p>
         </div>
-        <div className={cell}>
+        <div className={cellSecondary}>
           <p className="mb-1 text-[10px] font-medium uppercase tracking-widest text-white/40">
             CPL médio
           </p>
-          <p className="font-heading text-2xl font-bold tabular-nums tracking-tight text-white sm:text-3xl">
+          <p className="text-xl font-semibold tabular-nums tracking-tight text-white sm:text-2xl">
             R$ {cpl}
           </p>
-          <p className={cn("mt-1.5", badgeDelta)}>
+          <p className={cn("mt-1.5", badgeDelta, "tabular-nums")}>
             {EFICIENCIA_CPL} eficiência
           </p>
         </div>
-        <div className={cell}>
-          <p className="mb-1 text-[10px] font-medium uppercase tracking-widest text-white/40">
-            Cadência de testes
-          </p>
-          <p className="font-heading text-2xl font-bold tabular-nums tracking-tight text-white sm:text-3xl">
-            {testes}
-            <span className="text-base font-semibold text-white/45 sm:text-lg">/mês</span>
-          </p>
+        <div className={cn(cellSecondary, "col-span-2 flex flex-row flex-wrap items-end justify-between gap-3 sm:flex-nowrap sm:items-center")}>
+          <div className="min-w-0 flex-1">
+            <p className="mb-1 text-[10px] font-medium uppercase tracking-widest text-white/40">
+              Cadência de testes
+            </p>
+            <p className="text-xl font-semibold tabular-nums tracking-tight text-white sm:text-2xl">
+              {testes}
+              <span className="text-base font-semibold text-white/45 sm:text-lg">/mês</span>
+            </p>
+          </div>
           <p
             className={cn(
-              "mt-1.5 inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] px-2 py-0.5 text-xs font-medium text-white/45",
+              "inline-flex shrink-0 items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] px-2 py-0.5 text-xs font-medium text-white/45",
             )}
           >
             hipóteses ativas
@@ -129,12 +141,12 @@ function HeroDashboardKpis() {
           Ritmo
         </p>
         <p className="mt-1 text-[13px] font-medium leading-snug text-foreground sm:text-sm">
-          Leitura semanal — o que ajustar na próxima sprint.
+          Leitura semanal: o que ajustar na próxima sprint.
         </p>
       </div>
 
       <p className="font-mono text-[10px] leading-relaxed text-muted-foreground">
-        Painel modelo — números ilustrativos. Métricas reais apresentadas na conversa
+        Painel modelo, com números ilustrativos. Métricas reais apresentadas na conversa
         comercial.
       </p>
     </div>
@@ -151,17 +163,17 @@ export function HeroVisual() {
   return (
     <div className="relative mx-auto w-full max-w-[560px] overflow-hidden sm:overflow-visible">
       <motion.div
-        className="pointer-events-none absolute -left-[8%] top-[8%] size-[200px] rounded-full bg-[#0066FF]/12 blur-[56px] sm:-left-[18%] sm:size-[280px] sm:bg-[#0066FF]/15 sm:blur-[80px]"
+        className="pointer-events-none absolute -left-[8%] top-[8%] size-[200px] rounded-full bg-[#0066FF]/10 blur-[56px] sm:-left-[18%] sm:size-[260px] sm:bg-[#0066FF]/11 sm:blur-[72px]"
         animate={
-          reduce ? undefined : { opacity: [0.35, 0.55, 0.35], scale: [1, 1.06, 1] }
+          reduce ? undefined : { opacity: [0.22, 0.38, 0.22], scale: [1, 1.04, 1] }
         }
         transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
         aria-hidden
       />
       <motion.div
-        className="pointer-events-none absolute -right-[6%] bottom-[5%] size-[160px] rounded-full bg-[#0066FF]/10 blur-[48px] sm:-right-[12%] sm:size-[220px] sm:bg-[#0066FF]/12 sm:blur-[70px]"
+        className="pointer-events-none absolute -right-[6%] bottom-[8%] size-[140px] rounded-full bg-[#0066FF]/[0.08] blur-[44px] sm:-right-[10%] sm:size-[180px] sm:bg-[#0066FF]/[0.09] sm:blur-[58px]"
         animate={
-          reduce ? undefined : { opacity: [0.28, 0.45, 0.28], scale: [1, 1.05, 1] }
+          reduce ? undefined : { opacity: [0.14, 0.26, 0.14], scale: [1, 1.03, 1] }
         }
         transition={{
           duration: 6.2,
@@ -178,9 +190,9 @@ export function HeroVisual() {
 
         {!reduce && (
           <motion.div
-            className="pointer-events-none absolute inset-x-0 top-0 h-[120%] bg-gradient-to-b from-[#0066FF]/[0.07] to-transparent"
+            className="pointer-events-none absolute inset-x-0 top-0 h-[85%] bg-gradient-to-b from-[#0066FF]/[0.045] to-transparent"
             aria-hidden
-            animate={{ opacity: [0.5, 0.85, 0.5] }}
+            animate={{ opacity: [0.35, 0.55, 0.35] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
         )}
@@ -191,10 +203,10 @@ export function HeroVisual() {
             aria-hidden
           >
             <motion.div
-              className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-transparent via-[#0066FF]/[0.06] to-transparent"
+              className="absolute inset-x-0 top-0 h-[28%] bg-gradient-to-b from-transparent via-[#0066FF]/[0.04] to-transparent"
               animate={{ y: ["-100%", "200%"] }}
               transition={{
-                duration: 6,
+                duration: 7,
                 repeat: Infinity,
                 ease: "linear",
               }}
@@ -217,7 +229,7 @@ export function HeroVisual() {
             aria-hidden
             animate={{
               backgroundPosition: ["0px 0px", "24px 24px", "0px 0px"],
-              opacity: [0.38, 0.48, 0.38],
+              opacity: [0.3, 0.38, 0.3],
             }}
             transition={{
               duration: 14,
@@ -243,23 +255,28 @@ export function HeroVisual() {
 
         <div className="relative z-[1] flex flex-col gap-0 p-3 sm:p-4">
           <div className="flex flex-wrap items-start justify-between gap-3 border-b border-white/[0.06] pb-3">
-            <div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#A8A8B3]">
-                Painel de referência
-              </p>
-              <p className="font-heading mt-1 text-base font-semibold tracking-tight text-[#F8F8F8] sm:text-lg">
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#A8A8B3]">
+                  Painel de referência
+                </p>
+                <span className="rounded-md border border-white/[0.08] bg-white/[0.04] px-2 py-0.5 font-mono text-[10px] font-medium tabular-nums text-white/55">
+                  Últimos 7d
+                </span>
+                <span className="rounded-md border border-amber-500/20 bg-amber-500/[0.06] px-2 py-0.5 font-mono text-[10px] font-medium text-amber-200/90">
+                  ambiente modelo
+                </span>
+              </div>
+              <p className="font-heading mt-2 text-base font-semibold tracking-tight text-[#F8F8F8] sm:text-lg">
                 Funil em evolução
               </p>
-              <p className="mt-0.5 max-w-[280px] text-[11px] leading-snug text-[#A8A8B3] sm:text-xs">
-                Visão esquemática — valores abaixo são modelo até plugarmos os seus dados.
+              <p className="mt-1 max-w-[300px] text-[11px] leading-snug text-[#A8A8B3] sm:text-xs">
+                Valores ilustrativos até integrarmos os seus dados.
               </p>
             </div>
-            <div className="flex shrink-0 items-center gap-1.5 rounded-lg bg-[#0A0A0A]/80 px-2.5 py-1.5 ring-1 ring-[#0066FF]/30">
-              <span className="relative inline-flex size-2 rounded-full bg-emerald-400/90 shadow-[0_0_12px_rgb(52_211_153_/0.35)]" />
-              <span
-                className="font-mono text-[11px] font-medium"
-                style={{ color: ELECTRIC }}
-              >
+            <div className="flex shrink-0 items-center gap-1.5 rounded-lg bg-[#0A0A0A]/80 px-2.5 py-1.5 ring-1 ring-[#0066FF]/28">
+              <span className="relative inline-flex size-2 rounded-full bg-emerald-400/90 shadow-[0_0_10px_rgb(52_211_153_/0.28)]" />
+              <span className="font-mono text-[11px] font-medium" style={{ color: ELECTRIC }}>
                 operação guiada
               </span>
             </div>
@@ -267,7 +284,7 @@ export function HeroVisual() {
 
           <div className="mt-3 grid gap-3 lg:grid-cols-[1.12fr_0.88fr] lg:items-stretch">
             <div className="flex min-h-0 flex-col gap-2 lg:min-h-[280px]">
-              <div className="relative shrink-0 rounded-lg bg-[#0A0A0A]/50 p-2 ring-1 ring-white/[0.05] sm:p-2.5">
+              <div className="relative shrink-0 rounded-lg bg-[#0A0A0A]/50 p-2 shadow-[0_0_32px_-18px_rgb(0_102_255_/0.35)] ring-1 ring-[#0066FF]/20 sm:p-2.5">
               <div className="mb-1.5 flex items-center justify-between px-0.5">
                 <span className="font-mono text-[10px] text-[#A8A8B3]">
                   Direção do funil
@@ -288,7 +305,7 @@ export function HeroVisual() {
                     <stop offset="100%" stopColor={ELECTRIC} stopOpacity="0" />
                   </linearGradient>
                   <filter id={filterGlow} x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="3" result="b" />
+                    <feGaussianBlur stdDeviation="2.2" result="b" />
                     <feMerge>
                       <feMergeNode in="b" />
                       <feMergeNode in="SourceGraphic" />
@@ -409,7 +426,7 @@ export function HeroVisual() {
           <div className="mt-2 border-t border-white/5 pt-2.5">
             <p className="text-[10px] leading-relaxed text-white/25">
               Evidência sob autorização: métricas e materiais de clientes só quando há
-              permissão por escrito — na conversa comercial a ZYRON mostra o que for
+              permissão por escrito. Na conversa comercial a ZYRON mostra o que for
               pertinente ao seu caso.
             </p>
           </div>

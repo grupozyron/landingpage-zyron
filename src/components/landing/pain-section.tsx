@@ -10,7 +10,7 @@ import { Reveal } from "./reveal";
 
 const pains = [
   {
-    title: "Cresce só por indicação — sem previsibilidade",
+    title: "Cresce só por indicação, sem previsibilidade",
     icon: Users,
   },
   {
@@ -45,7 +45,7 @@ export function PainSection() {
           </h2>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
             Negócios fortes costumam sentir isso antes de estruturarem aquisição de
-            verdade — não é falta de qualidade, é falta de sistema.
+            verdade: não é falta de qualidade, é falta de sistema.
           </p>
         </Reveal>
 

@@ -11,7 +11,7 @@ import { Reveal } from "./reveal";
 const cards = [
   {
     title: "Tráfego qualificado",
-    body: "Campanhas direcionadas ao perfil certo — no momento certo.",
+    body: "Campanhas direcionadas ao perfil certo, no momento certo.",
     icon: Target,
     span: "large" as const,
     highlight: false,
@@ -56,7 +56,7 @@ export function SolutionSection() {
             O que a ZYRON faz pelo seu crescimento
           </h2>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-            Marketing, tecnologia e conversão no mesmo sistema — para negócios
+            Marketing, tecnologia e conversão no mesmo sistema para negócios
             tradicionais que precisam de estrutura, não de mais um pacote genérico.
           </p>
         </Reveal>

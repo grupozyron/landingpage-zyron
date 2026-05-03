@@ -28,7 +28,7 @@ const geistMono = Geist_Mono({
 });
 
 const SEO_DESCRIPTION =
-  "A ZYRON transforma negócios tradicionais em empresas digitais. Tráfego pago, landing pages e IA para WhatsApp — com método e resultado previsível.";
+  "A ZYRON transforma negócios tradicionais em empresas digitais. Tráfego pago, landing pages e IA para WhatsApp, com método e resultado previsível.";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "ZYRON — Crescimento digital para empresas sérias",
+        alt: "ZYRON · Crescimento digital para empresas sérias",
       },
     ],
   },

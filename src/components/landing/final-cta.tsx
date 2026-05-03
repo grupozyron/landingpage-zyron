@@ -54,7 +54,7 @@ export function FinalCta() {
 
             Em 30 minutos de conversa, você entende o que está travando seu
 
-            crescimento e quais são os próximos passos — sem enrolação.
+            crescimento e quais são os próximos passos, sem enrolação.
 
           </p>
 

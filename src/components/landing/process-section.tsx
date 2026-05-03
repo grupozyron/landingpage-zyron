@@ -62,7 +62,7 @@ const steps = [
 
     title: "Otimização & escala",
 
-    body: "Medição, testes e expansão do que comprova retorno — sem achismo.",
+    body: "Medição, testes e expansão do que comprova retorno, sem achismo.",
 
     icon: LineChart,
 
@@ -106,7 +106,7 @@ export function ProcessSection() {
 
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
 
-            Quatro etapas claras — da análise ao ritmo de melhoria contínua.
+            Quatro etapas claras, da análise ao ritmo de melhoria contínua.
 
           </p>
 

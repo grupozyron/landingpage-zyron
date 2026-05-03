@@ -30,7 +30,7 @@ export function DifferentialSection() {
             Por que a ZYRON é diferente?
           </h2>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted-foreground sm:text-base">
-            Não somos uma agência genérica de posts — somos uma empresa de
+            Não somos uma agência genérica de posts; somos uma empresa de
             crescimento com método, tecnologia e disciplina comercial.
           </p>
         </Reveal>

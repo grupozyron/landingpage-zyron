@@ -100,7 +100,7 @@ export function TrustStrip() {
 
           Evidência sob autorização: métricas e materiais de clientes só quando há
 
-          permissão por escrito — na conversa comercial a ZYRON mostra o que for
+          permissão por escrito. Na conversa comercial a ZYRON mostra o que for
 
           pertinente ao seu caso.
 

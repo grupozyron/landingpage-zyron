@@ -29,7 +29,7 @@ export default function ObrigadoPage() {
         </h1>
         <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
           Em até <strong className="font-semibold text-foreground">dois dias úteis</strong>{" "}
-          retornamos com o próximo passo — objetivo e sem enrolação.
+          retornamos com o próximo passo, objetivo e sem enrolação.
         </p>
         <p className="mt-6 text-sm text-muted-foreground">
           Se preferir falar agora, use o WhatsApp comercial no site ou volte à página

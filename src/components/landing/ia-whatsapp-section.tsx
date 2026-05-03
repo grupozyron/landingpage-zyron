@@ -61,7 +61,7 @@ const features = [
     icon: Zap,
     title: "Resposta em segundos",
     description:
-      "Nunca perde um paciente por demora no primeiro contato — mesmo à meia-noite.",
+      "Nunca perde um paciente por demora no primeiro contato, mesmo à meia-noite.",
   },
   {
     icon: CalendarCheck,
@@ -79,7 +79,7 @@ const features = [
     icon: BarChart2,
     title: "Relatório semanal",
     description:
-      "Sabe quantos pacientes perdeu por falta de resposta rápida — e quantos recuperou.",
+      "Sabe quantos pacientes perdeu por falta de resposta rápida e quantos recuperou.",
   },
 ] as const;
 
@@ -155,12 +155,12 @@ export function IaWhatsAppSection() {
             </span>
           </div>
           <h2 className="font-heading max-w-3xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl sm:leading-tight">
-            Seu negócio atendendo 24h por dia, 7 dias por semana — sem contratar
+            Seu negócio atendendo 24h por dia, 7 dias por semana, sem contratar
             ninguém.
           </h2>
           <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-muted-foreground sm:text-lg">
             A ZYRON implementa IA no WhatsApp da sua clínica que agenda consultas,
-            responde sobre convênios, confirma horários e qualifica pacientes —
+            responde sobre convênios, confirma horários e qualifica pacientes
             enquanto você foca no atendimento.
           </p>
         </Reveal>

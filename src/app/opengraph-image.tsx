@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt = "ZYRON — Crescimento digital para empresas sérias";
+export const alt = "ZYRON · Crescimento digital para empresas sérias";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -52,7 +52,7 @@ export default function OpenGraphImage() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: 18, maxWidth: 920 }}>
           <p style={{ fontSize: 30, lineHeight: 1.35, color: "rgba(232,232,240,0.92)" }}>
-            Tráfego pago, landing pages e IA para WhatsApp — método e previsibilidade.
+            Tráfego pago, landing pages e IA para WhatsApp: método e previsibilidade.
           </p>
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
             {["Aquisição", "Landing", "WhatsApp", "Dados"].map((t) => (
