@@ -6,6 +6,9 @@ export const BRAND = {
   black: "#0A0A0A",
   white: "#F8F8F8",
   blue: "#2563FF",
+  /** Accent hero / dashboards (referência Linear/Vercel — prompt premium). */
+  heroElectric: "#0066FF",
+  heroElectricHover: "#0052CC",
   graphite: "#1C1C1C",
   silver: "#B8BDC9",
 } as const;

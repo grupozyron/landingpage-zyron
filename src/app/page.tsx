@@ -3,7 +3,6 @@ import { ScrollHashHandler } from "@/components/scroll-hash-handler";
 import { AudienceSegments } from "@/components/landing/audience-segments";
 import { CaseStudy } from "@/components/landing/case-study";
 import { FinalCta } from "@/components/landing/final-cta";
-import { FloatingWhatsApp } from "@/components/landing/floating-whatsapp";
 import { GridBackground } from "@/components/landing/grid-background";
 import { IaWhatsAppSection } from "@/components/landing/ia-whatsapp-section";
 import { LogoWall } from "@/components/landing/logo-wall";
@@ -40,7 +39,6 @@ export default function Home() {
         <FinalCta />
       </main>
       <MobileStickyCta />
-      <FloatingWhatsApp />
       <SiteFooter />
     </>
   );

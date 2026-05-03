@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { Lock } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 import {
@@ -34,7 +35,7 @@ import {
 } from "@/lib/diagnosis-validation";
 import { formatBrazilMobileDisplay } from "@/lib/whatsapp-mask";
 import { trackLeadConversion } from "@/lib/track-conversion";
-import { ctaDiagnosisBlock } from "@/lib/cta-styles";
+import { ctaForm } from "@/lib/cta-styles";
 import { cn } from "@/lib/utils";
 
 const segments = [
@@ -368,7 +369,7 @@ export function DiagnosisForm() {
                   type="button"
                   disabled={!canStep1}
                   className={cn(
-                    ctaDiagnosisBlock,
+                    ctaForm,
                     "disabled:pointer-events-none disabled:opacity-45",
                   )}
                   onClick={() => {
@@ -395,7 +396,7 @@ export function DiagnosisForm() {
                     type="submit"
                     disabled={submitDisabled}
                     className={cn(
-                      ctaDiagnosisBlock,
+                      ctaForm,
                       "disabled:pointer-events-none disabled:opacity-45",
                     )}
                   >
@@ -404,6 +405,10 @@ export function DiagnosisForm() {
                 </>
               )}
             </div>
+            <p className="mt-3 flex items-center justify-center gap-1.5 text-center text-xs text-muted-foreground">
+              <Lock className="size-3 shrink-0" strokeWidth={2} aria-hidden />
+              Seus dados são confidenciais. Retorno em até 2 dias úteis.
+            </p>
           </CardFooter>
         </form>
       </MagicCard>

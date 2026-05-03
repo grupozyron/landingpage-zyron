@@ -16,20 +16,20 @@ export function LogoWall({ className }: { className?: string }) {
   return (
     <section
       className={cn(
-        "border-b border-white/[0.05] bg-[#0A0A0A]/40 py-10 md:py-12",
+        "border-t border-white/5 border-b border-white/[0.05] bg-[#0A0A0A]/40 py-8",
         className,
       )}
       aria-label="Ferramentas e plataformas"
     >
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-        <p className="text-center font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-          Tecnologia e plataformas que utilizamos
+        <p className="mb-4 w-full text-center text-[11px] uppercase tracking-widest text-white/30">
+          Tecnologia &amp; plataformas que utilizamos
         </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-x-10 gap-y-4 md:gap-x-14">
+        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
           {ITEMS.map((label) => (
             <span
               key={label}
-              className="select-none font-mono text-sm font-medium text-foreground/50 transition-opacity duration-200 hover:text-foreground/90"
+              className="cursor-default text-sm font-medium text-white/25 transition-colors duration-200 hover:text-white/50"
             >
               {label}
             </span>

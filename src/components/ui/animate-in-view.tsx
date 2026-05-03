@@ -1,6 +1,6 @@
 "use client";
 
-import { useInView, useReducedMotion } from "framer-motion";
+import { useInView, useReducedMotion } from "motion/react";
 import { type CSSProperties, type ReactNode, useRef } from "react";
 
 import { cn } from "@/lib/utils";

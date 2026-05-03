@@ -15,7 +15,7 @@ import { createPortal } from "react-dom";
 
 import { HashLink } from "@/components/hash-link";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
-import { ctaDiagnosis } from "@/lib/cta-styles";
+import { ctaNavDrawerPrimary } from "@/lib/cta-styles";
 import { getWhatsAppLeadUrl } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
 
@@ -35,7 +35,7 @@ const NAV_ICON: Record<string, LucideIcon> = {
   solucao: Lightbulb,
   "ia-whatsapp": Bot,
   case: Trophy,
-  processo: Workflow,
+  "como-funciona": Workflow,
   contact: MessageCircle,
 };
 
@@ -192,10 +192,7 @@ export function MobileNavOverlay({
             <InteractiveHoverButton
               href="#diagnosis"
               onClick={onClose}
-              className={cn(
-                ctaDiagnosis,
-                "h-11 min-h-[44px] w-full justify-center px-4 text-[14px] shadow-[0_0_28px_-12px_rgb(37_99_255_/0.45)]",
-              )}
+              className={ctaNavDrawerPrimary}
             >
               Solicitar diagnóstico gratuito
             </InteractiveHoverButton>

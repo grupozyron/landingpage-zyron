@@ -22,7 +22,7 @@ const footerNav = [
   { href: "#dor", label: "Desafios" },
   { href: "#solucao", label: "Solução" },
   { href: "#case", label: "Case" },
-  { href: "#processo", label: "Processo" },
+  { href: "#como-funciona", label: "Processo" },
   { href: "#contact", label: "Contato" },
   { href: "#diagnosis", label: "Formulário" },
 ];

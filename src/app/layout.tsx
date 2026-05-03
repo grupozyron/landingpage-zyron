@@ -7,6 +7,7 @@ import { AnalyticsScripts } from "@/components/analytics/analytics-scripts";
 import { OrganizationJsonLd } from "@/components/seo/organization-jsonld";
 import { SkipToContent } from "@/components/skip-to-content";
 import { ThemeProvider } from "@/components/theme-provider";
+import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { SITE_CANONICAL_URL } from "@/lib/site-config";
 
 const inter = Inter({
@@ -96,6 +97,7 @@ export default function RootLayout({
         <AnalyticsScripts />
         <OrganizationJsonLd />
         <ThemeProvider>{children}</ThemeProvider>
+        <WhatsAppFloat />
       </body>
     </html>
   );

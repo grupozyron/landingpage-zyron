@@ -3,9 +3,8 @@
 import { Bot, Check } from "lucide-react";
 
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
-import { ctaDiagnosis } from "@/lib/cta-styles";
+import { ctaSection, ctaSectionSecondary } from "@/lib/cta-styles";
 import { getWhatsAppLeadUrl } from "@/lib/whatsapp";
-import { cn } from "@/lib/utils";
 
 import { BeamHighlight } from "./beam-highlight";
 import { Reveal } from "./reveal";
@@ -69,7 +68,7 @@ export function WhatsappAiSection() {
               <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
                 <InteractiveHoverButton
                   href="#diagnosis"
-                  className={cn(ctaDiagnosis, "w-full sm:w-auto")}
+                  className={ctaSection}
                 >
                   Quero ver essa automação
                 </InteractiveHoverButton>
@@ -78,10 +77,7 @@ export function WhatsappAiSection() {
                     href={wa}
                     target="_blank"
                     rel="noreferrer"
-                    className={cn(
-                      ctaDiagnosis,
-                      "border border-white/[0.12] bg-[#1C1C1C]/90 shadow-[0_0_24px_-16px_rgb(37_99_255_/0.25)] w-full sm:w-auto",
-                    )}
+                    className={ctaSectionSecondary}
                   >
                     Falar no WhatsApp
                   </InteractiveHoverButton>

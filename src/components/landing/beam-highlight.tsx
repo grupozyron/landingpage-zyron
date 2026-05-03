@@ -1,6 +1,6 @@
 "use client";
 
-import { useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "motion/react";
 
 import { BorderBeam } from "@/components/ui/border-beam";
 import { cn } from "@/lib/utils";

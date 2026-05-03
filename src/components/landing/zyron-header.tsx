@@ -7,7 +7,7 @@ import { SiteLogo } from "@/components/brand/site-logo";
 import { HashLink } from "@/components/hash-link";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { useActiveSection } from "@/hooks/use-active-section";
-import { ctaDiagnosisNav } from "@/lib/cta-styles";
+import { ctaNavSecondary } from "@/lib/cta-styles";
 import { cn } from "@/lib/utils";
 
 import { MobileNavOverlay } from "./mobile-nav-overlay";
@@ -17,7 +17,7 @@ const nav = [
   { href: "#solucao", label: "Solução" },
   { href: "#ia-whatsapp", label: "IA" },
   { href: "#case", label: "Case" },
-  { href: "#processo", label: "Processo" },
+  { href: "#como-funciona", label: "Processo" },
   { href: "#contact", label: "Contato" },
 ] as const;
 
@@ -100,8 +100,8 @@ export function ZyronHeader() {
             <InteractiveHoverButton
               href="#diagnosis"
               className={cn(
-                "cta-shimmer-hover max-w-[220px] truncate sm:max-w-none",
-                ctaDiagnosisNav,
+                "max-w-[min(100%,220px)] truncate sm:max-w-none",
+                ctaNavSecondary,
               )}
             >
               Estratégia →

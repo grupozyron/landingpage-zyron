@@ -1,17 +1,17 @@
 "use client";
 
-import { useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "motion/react";
 import { memo, type ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
-/** Paleta premium alinhada à marca (ouro + azul institucional). */
+/** Paleta ZYRON — azul elétrico e variações (Hero / destaques). */
 export const defaultAuroraColors = [
-  "#2563FF",
-  "#5A8AFF",
-  "#B8BDC9",
-  "#F8F8F8",
-  "#2563FF",
+  "#0066FF",
+  "#00AAFF",
+  "#0040CC",
+  "#38BDF8",
+  "#0066FF",
 ] as const;
 
 export type AuroraTextProps = {
@@ -43,7 +43,7 @@ export const AuroraText = memo(function AuroraText({
 
   if (reduce) {
     return (
-      <span className={cn("font-semibold text-[#2563FF]", className)}>
+      <span className={cn("font-semibold text-[#0066FF]", className)}>
         {children}
       </span>
     );

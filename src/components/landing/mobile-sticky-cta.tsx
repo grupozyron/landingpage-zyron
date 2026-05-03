@@ -1,10 +1,11 @@
 "use client";
 
 import { X } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 import { HashLink } from "@/components/hash-link";
+import { mobileStickyCtaShell } from "@/lib/cta-styles";
 import { cn } from "@/lib/utils";
 
 const DISMISS_KEY = "zyron_sticky_cta_dismissed";
@@ -76,8 +77,8 @@ export function MobileStickyCta() {
             <div className="flex flex-1 items-center gap-2">
               <div
                 className={cn(
-                  "flex h-14 min-w-0 flex-1 items-center gap-2 overflow-hidden rounded-full px-3 sm:px-4",
-                  "border border-[#2563FF]/35 bg-[#2563FF] text-white shadow-[0_12px_40px_-18px_rgb(37_99_255_/0.65)]",
+                  "flex h-14 min-w-0 flex-1 items-center gap-2 overflow-hidden rounded-full px-3 text-white sm:px-4",
+                  mobileStickyCtaShell,
                 )}
               >
                 <span className="min-w-0 flex-1 truncate ps-1 text-[13px] font-medium">

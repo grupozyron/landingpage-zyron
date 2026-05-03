@@ -1,11 +1,11 @@
 "use client";
 
 import { Bot, Calendar, BarChart3, Zap } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "motion/react";
 
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { SEGMENT_PREFILL_KEY } from "@/lib/diagnosis-prefill";
-import { ctaDiagnosis } from "@/lib/cta-styles";
+import { ctaSection } from "@/lib/cta-styles";
 import { cn } from "@/lib/utils";
 import { fadeUp, stagger } from "@/lib/motion-variants";
 
@@ -192,7 +192,7 @@ export function IaWhatsAppSection() {
             <div className="mt-8">
               <InteractiveHoverButton
                 type="button"
-                className={cn(ctaDiagnosis, "w-full sm:w-auto")}
+                className={ctaSection}
                 onClick={goForm}
               >
                 Quero IA no meu WhatsApp
